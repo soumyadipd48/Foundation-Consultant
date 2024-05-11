@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+</head>
+<body>
+    <div class="nav" id="nav">
+        <!-- <input type="checkbox" id="nav-check"> -->
+        <img src="../../../assets/Foundation_logo_nobg.png">
+        <div class="nav-header">
+          <div class="nav-title">
+            FOUNDATION CONSULTANTS
+          </div>
+        </div>
+        <!-- <div class="nav-btn">
+          <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div> -->
+    
+        <!-- Hamburger icon -->
+        <input class="side-menu" type="checkbox" id="side-menu"/>
+        <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+        
+        <div class="nav-links">
+          <a href="/home">Home</a>
+          <a alt="SERVICES" class="dropdown" type="checkbox">
+            <!-- <button class="dropbtn">Services</button> -->Services
+            <div class="dropdown-content">
+              <li *ngFor="let service of services" (click)="navigate(service.subject);">{{service.subject}}</li>
+            </div>
+          </a>
+          <a alt="INDUSTRIES" class="dropdown" type="checkbox">
+            <!-- <button class="dropbtn-industries">Industries</button> -->Industries
+            <div class="dropdown-content-industries">
+                <li *ngFor="let industry of industries" (click)="navigate_industry(industry.subject);">{{industry.subject}}</li>
+            </div>
+          </a>
+          <!-- <a href="/aboutUs">About Us</a> -->
+          <!-- <a href="https://jsfiddle.net/user/jo_Geek/">Career</a> -->
+          <a href="/aboutUs" alt="ABOUT US">About us</a>
+          <a href="/contactUs" alt="CONTACT US">Contact Us</a>
+        </div>
+        
+        <!-- Hamburger icon -->
+        <!-- <input class="side-menu" type="checkbox" id="side-menu"/>
+        <label class="hamb" for="side-menu"><span class="hamb-line"></span></label> -->
+      </div>
+    <div class="header_about_us">
+        <h1 class="Outfit">About Us</h1>
+    </div>
+    
+    <div class="container" id="container_about_us_hero">
+        <div class="img_abouts_us">
+            <img src="../../../assets/AboutUs.jpg">
+        </div>
+        
+        <p> Incorporated in October, 1978 as a specialist firm, Foundation Consultants have able to grow its reputation for
+            various projects in different parts of the country. Over the years it has served to its clients with quality
+            professional services in the field of geotechnical investigations. Since then, Foundation Consultants has been able
+            satisfy its clients with complete proper services.
+            Since 1978 we have completed geotechnical investigations for more than 1695 multidisciplinary projects of various
+            dimensions in different parts of our country. From the enclosed list of some of the projects for which we were
+            entrusted with geotechnical investigation, it may kindly be recorded that the areas of our operation spanned from
+            remote places in Arunachal Pradesh to Nagapattinam at extreme South in the state of Tamil Nadu.
+            We take up detailed survey at various project sites apart from Geotechnical Investigations.
+        </p>
+    </div>
+    <div class="quotes">
+        <h2 class="Satify">Our work does make sense only if it is a faithful witness of his time.</h2>
+        <img src="../../../assets/AboutUs2.jpg">
+    </div>
+    
+    <h1 style="text-align: center; margin-top: 100px; color: #0f1141;" class="Outfit" data-aos="zoom-in" id="expertTeam">Meet The Team</h1>
+    <h4 style="text-align: center; color: #0f1141;" class="Outfit" id="expertTeamMsg">We are at your service with our competent staffs.</h4>
+    <!-- <p>The undersigned provided services to NHAI, New Delhi as pavement – cum – Material Engineer as one of the Key
+        Personnel on of M/s. Archtech Consultants Pvt. Ltd., Kolkata for 4 – Laning of NH25 from 21.80 km to 59.50 km
+        (Lucknow – Kanpur section) in the State of Uttar Pradesh. The undersigned also worked as Material – cum –
+        Geotechnical Expert on behalf of M/s. Archtech Consultants Pvt. Ltd., Kolkata for preparation of Project Report in
+        connection with 4 – Laning of NH25 from 21.80 km to 44.00 km (Lucknow – Kanpur section), Uttar Pradesh
+    </p> -->
+    <!-- <img src="../../../assets/Team1.jpg">
+    <img src="../../../assets/Team1.jpg">
+    <img src="../../../assets/Team1.jpg"> -->
+    <div class="container" #container id="container_our_team">
+        <div class="arrow left" *ngIf="totalPages > 1" (click)="currentPage != 1 && changePage(-1)" [ngClass]="{'disabled':currentPage === 1}"></div>
+        <div class="arrow right" *ngIf="totalPages > 1" (click)="currentPage != totalPages && changePage(+1)"
+            [ngClass]="{'disabled':currentPage === totalPages}">
+        </div>
+        <!-- <div class="cards" [ngClass]="{'w-100': totalPages === 1}">
+            <div class="overflow" [ngStyle]="{'width': overflowWidth, 'left': pagePosition}">
+                <div class="card" *ngFor="let i of arr; let index = index" [ngStyle]="{'width': cardWidth}">
+                    <span>{{i}}</span>
+                </div>
+            </div>
+        </div> -->
+        <div class="cards" [ngClass]="{'w-100': totalCards === 1}">
+            <div class="overflow" [ngStyle]="{'width': overflowWidth, 'left': pagePosition}">
+            <!-- <div class="overflow"> -->
+                <div class="profile-card" *ngFor="let i of members; let index = index">
+                    <div class="img">
+                        <img
+                            src="https://1.bp.blogspot.com/-8c7QTLoyajs/YLjr2V6KYRI/AAAAAAAACO8/ViVPQpLWVM0jGh3RZhh-Ha1-1r3Oj62wQCNcBGAsYHQ/s16000/team-1-3.jpg">
+                    </div>
+                    <div class="caption">
+                        <h4>{{ i.name }}</h4>
+                        <p>{{ i.designation }}</p>
+                        <p>{{ i.degree }}</p>
+                        <!-- <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="arrow right" *ngIf="totalPages > 1" (click)="currentPage != totalPages && changePage(+1)"
+            [ngClass]="{'disabled':currentPage === totalPages}">
+        </div> -->
+    </div>
+    
+  <!-- NEW FOOTER START -->
+
+  <footer class="footer-section">
+    <div class="container_new" style="top: -30px; height: 50vh;">
+        <div class="footer-cta pt-5 pb-5">
+            <div class="row">
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="fas fa-map-marker-alt shake" (click)="openMap()"></i>
+                        <div class="cta-text">
+                            <h4>Find us</h4>
+                            <span>91/33 Tollygunge Road. Kolkata - 700033</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="fas fa-phone"></i>
+                        <div class="cta-text">
+                            <h4>Call us</h4>
+                            <span>98765432100</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta-mail">
+                        <i class="far fa-envelope-open"></i>
+                        <div class="cta-text-email">
+                            <h4>Mail us</h4>
+                            <h6>info@foundationconsultants.in</h6>
+                            <h6 style="margin-top: 5px; color: #e0dede;">geotechnic_soil@yahoo.com</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-content pt-5 pb-5">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 mb-50">
+                    <div class="footer-widget">
+                        <!-- <div class="footer-logo">
+                            <a href="index.html"><img src="https://i.ibb.co/QDy827D/ak-logo.png" class="img-fluid" alt="logo"></a>
+                        </div> -->
+                        <div class="footer-text">
+                            <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing
+                            elit,Lorem ipsum dolor sit amet.</p>
+                        </div>
+                        <div class="footer-social-icon">
+                            <span>Follow us</span>
+                            <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
+                            <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                            <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3>Useful Links</h3>
+                        </div>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a (click)="goToPartNextPage('industries-new')">Industries</a></li>
+                            <!-- <li><a href="#">services</a></li> -->
+                            <!-- <li><a href="#">portfolio</a></li> -->
+                            <!-- <li><a href="#">Contact</a></li> -->
+                            <li><a href="/aboutUs">About us</a></li>
+                            <li><a (click)="goToPartNextPage('services')">Our Services</a></li>
+                            <li><a (click)="goToPart('expertTeam')">Expert Team</a></li>
+                            <li><a href="/contactUs">Contact us</a></li>
+                            <!-- <li><a href="#">Latest News</a></li> -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading-new">
+                            <h3>Subscribe</h3>
+                        </div>
+                        <div class="footer-text-new mb-25">
+                            <p>Don't miss to subscribe to our new feeds, kindly fill the form below.</p>
+                        </div>
+                        <div class="subscribe-form">
+                            <form action="#">
+                                <input type="text" placeholder="Email Address">
+                                <button><i class="fab fa-telegram-plane"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-area">
+        <!-- <div class="container_new"> -->
+            <div class="row_footer">
+                <!-- <div class="col-xl-6 col-lg-6 text-center text-lg-left"> -->
+                    <div class="copyright-text">
+                        <p>Copyright &copy; 2023, All Right Reserved <a href="#">FOUNDATION CONSULTANTS</a></p>
+                    </div>
+                <!-- </div> -->
+                <!-- <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Policy</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div> -->
+            </div>
+    </div>
+    <!-- </div> -->
+</footer>
+</body>
+</html>

@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">>
+  <!-- <link href="style.css" rel="stylesheet"> -->
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- <mat-toolbar color="primary" class="toolbar">
+    <span>FOUNDATION CONSULTANT</span>
+    <div class="container gray highlightTextIn">
+      <a alt="HOME">HOME</a>
+      <a alt="SERVICES">SERVICES</a>
+      <a alt="PROJECTS">PROJECTS</a>
+      <a alt="ABOUT US">ABOUT US</a>
+      <a alt="CAREER">CAREER</a>
+    </div>
+  </mat-toolbar> -->
+  <div class="hero_section_new">
+    <!-- <div class="hero_section_polygon"></div>
+    <div class="hero_section_img">
+      <img src="../../../assets/City.jpg">
+    </div> -->
+
+    <!-- <img src="../../../assets/Hero_new.jpg" decoding="async"> -->
+    <app-carousel-new [images_hero]="images_hero" [autoSlide]="true" [indicators]="false" [controls]="false"></app-carousel-new>
+
+    <!-- <div class="top_left_top">
+      <img src="../../../assets/Foundation_logo_nobg.png" loading="lazy">
+      <h2 class="col-md-2">FOUNDATION CONSULTANTS</h2>
+      Hamburger icon
+      <input class="side-menu" type="checkbox" id="side-menu" (change)='handleChange(this)'/>
+      <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+
+      <div class="container_new highlightTextIn col-lg-8">
+        <a href="/home" alt="HOME">HOME</a>
+        <a alt="SERVICES" class="dropdown">
+          <button class="dropbtn">SERVICES</button>
+          <div class="dropdown-content">
+            <li *ngFor="let service of services" (click)="navigate(service.subject);">{{service.subject}}</li>
+          </div>
+        </a>
+        <a alt="INDUSTRIES" class="dropdown">
+          <button class="dropbtn">INDUSTRIES</button>
+          <div class="dropdown-content-industries">
+            <li *ngFor="let industry of industries" (click)="navigate_industry(industry.subject);">{{industry.subject}}
+            </li>
+          </div>
+        </a>
+        <a [routerLink]="['/aboutUs']" alt="ABOUT US">ABOUT US</a>
+        <a [routerLink]="['/contactUs']" alt="CONTACT US">CONTACT US</a>
+      </div>
+    </div> -->
+
+    <div class="nav" id="nav">
+      <!-- <input type="checkbox" id="nav-check"> -->
+      <img src="../../../assets/Foundation_logo_nobg.png">
+      <div class="nav-header">
+        <div class="nav-title">
+          FOUNDATION CONSULTANTS
+        </div>
+      </div>
+      <!-- <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div> -->
+
+      <!-- Hamburger icon -->
+      <input class="side-menu" type="checkbox" id="side-menu"/>
+      <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+      
+      <div class="nav-links">
+        <a href="/home">Home</a>
+        <a alt="SERVICES" class="dropdown" type="checkbox">
+          <!-- <button class="dropbtn">Services</button> -->Services
+          <div class="dropdown-content">
+            <li *ngFor="let service of services" (click)="navigate(service.subject);">{{service.subject}}</li>
+          </div>
+        </a>
+        <a alt="INDUSTRIES" class="dropdown" type="checkbox">
+          <!-- <button class="dropbtn-industries">Industries</button> -->Industries
+          <div class="dropdown-content-industries">
+              <li *ngFor="let industry of industries" (click)="navigate_industry(industry.subject);">{{industry.subject}}</li>
+          </div>
+        </a>
+        <!-- <a href="/aboutUs">About Us</a> -->
+        <!-- <a href="https://jsfiddle.net/user/jo_Geek/">Career</a> -->
+        <a href="/aboutUs" alt="ABOUT US">About us</a>
+        <a href="/contactUs" alt="CONTACT US">Contact Us</a>
+      </div>
+      
+      <!-- Hamburger icon -->
+      <!-- <input class="side-menu" type="checkbox" id="side-menu"/>
+      <label class="hamb" for="side-menu"><span class="hamb-line"></span></label> -->
+    </div>
+    <!-- <div class="top-left" id="top-left">BUILD SOLID FOUNDATIONS</div>
+    <div class="top-left-new" id="top-left-new">FOR AN EVER CHANGING WORLD..</div> -->
+    <!-- <div class="top-left-new-below">We shape our buildings, thereafter they shape us....</div> -->
+    <button class="hero_section_button"  id="hero_section_button" (click)="redirectContactUs()">Contact Us</button>
+  </div>
+  <div class="why_us_section">
+    <div class="why_us_section_text">
+      Incorporated in the year 1978 as a specialist firm, Foundation Consultants have able to grow its reputation for
+      various projects in different parts of the country. Over the years it has served to its clients with quality
+      professional services in the field of geotechnical investigations. Since then, Foundation Consultants has been
+      able satisfy its clients with complete proper services.
+      <div class="why_us_section_text_point" data-aos="fade-left">
+        <div class="why_us_section_point1">
+          <ul><img src="../../../assets/experience.png" loading="lazy"><p>Expertise and Experience</p></ul>
+          <ul><img src="../../../assets/problem-solving.png" loading="lazy"><p>Problem-Solving</p></ul>
+          <ul><img src="../../../assets/arm.png" loading="lazy"><p>Teamwork</p></ul>
+        </div>
+        <div class="why_us_section_point2">
+          <ul><img src="../../../assets/customer-review.png" loading="lazy"><p>Client-Centric Approach</p></ul>
+          <ul><img src="../../../assets/notes.png" loading="lazy"><p>Good Track Record</p></ul>
+          <ul><img src="../../../assets/new.png" loading="lazy"><p>New Ideas</p></ul>
+        </div>
+      </div>
+
+    </div>
+    <app-carousel [images]="images_hero_bottom" [autoSlide]="true" [indicators]="false" [controls]="false" style="max-width: 800px;"></app-carousel>
+  </div>
+
+  <!-- <div class="section_our_services_header_wrap">
+    <header class="header">
+      <div class="header_new_our_service">
+        <li style="--clr:#fff">
+          <h2><a href="#" data-text="&nbsp;OUR SERVICES">&nbsp;OUR SERVICES&nbsp;</a></h2>
+        </li>
+      </div>
+    </header>
+  </div> -->
+
+  <!-- <header class="header_new_header">
+    <h2>We provide Special Service To The Industry Sector</h2>
+    <h5>We provide Professional Services with the latest Technologies.</h5>
+  </header> -->
+
+  <!-- <div class="section_our_services_card">
+    <div class="row">
+      <div class="card2"  *ngFor="let service of services">
+        <img src="../assets/{{service.shortName}}.png" class="img-fluid-new2" />
+        <div class="intro">
+          <h2 class='new-title'>{{service.subject}}</h2>
+          <p class='newsCaption-content'>
+            {{service.short_details}}
+          </p>
+          <button class="button1" (click)="navigate(service.subject);">Read more</button>
+        </div>
+      </div>
+    </div> -->
+  <!-- <div class="row">
+      <div class="card2">
+        <img src="../../../assets/tp1.png" class="img-fluid-new2" />
+        <div class="intro">
+          <h2 class='new-title'>Topographical Survey</h2>
+          <p class='newsCaption-content'>
+            We are doing a great consultancy service since 2007.
+          </p>
+          <button class="button1" (click)="navigate(this);" id="Topographical Survey">Read more</button>
+        </div>
+      </div>
+      <div class="card2">
+        <img src="../../../assets/FT2.png" class="img-fluid-new2" />
+        <div class="intro">
+          <h2 class='new-title'>Field Testing</h2>
+          <p class='newsCaption-content'>
+            We are doing a great consultancy service since 2007.
+          </p>
+          <button class="button1" (click)="navigate(this)">Read more</button>
+        </div>
+      </div>
+      <div class="card2">
+        <img src="../../../assets/SI1.png" class="img-fluid-new2" />
+        <div class="intro">
+          <h2 class='new-title'>Soil Investigation</h2>
+          <p class='newsCaption-content'>
+            We are doing a great consultancy service since 2007.
+          </p>
+          <button class="button1" (click)="navigate(this)">Read more</button>
+        </div>
+      </div>
+      <div class="card2">
+        <img src="../../../assets/LT1.png" class="img-fluid-new2" />
+        <div class="intro">
+          <h2 class='new-title'>Laboratory Testing</h2>
+          <p class='newsCaption-content'>
+            We are doing a great consultancy service since 2007.
+          </p>
+          <button class="button1" (click)="navigate(this)">Read more</button>
+        </div>
+      </div>
+      <div class="card2">
+        <img src="../../../assets/CT2.png" class="img-fluid-new2" />
+        <div class="intro">
+          <h2 class='new-title'>Consulting Services</h2>
+          <p class='newsCaption-content'>
+            We are doing a great consultancy service since 2007.
+          </p>
+          <button class="button1" (click)="navigate(this)">Read more</button>
+        </div>
+      </div> -->
+
+  <!-- <div class="card">
+        <div class="additional">
+          <div class="user-card">
+            <div class="level center">
+              Level 13
+            </div>
+            <div class="points center">
+              5,312 Points
+            </div>
+
+          </div>
+          <div class="more-info">
+            <h1>Jane Doe</h1>
+            <div class="coords">
+              <span>Group Name</span>
+              <span>Joined January 2019</span>
+            </div>
+            <div class="coords">
+              <span>Position/Role</span>
+              <span>City, Country</span>
+            </div>
+            <div class="stats">
+              <div>
+                <div class="title">Awards</div>
+                <i class="fa fa-trophy"></i>
+                <div class="value">2</div>
+              </div>
+              <div>
+                <div class="title">Matches</div>
+                <i class="fa fa-gamepad"></i>
+                <div class="value">27</div>
+              </div>
+              <div>
+                <div class="title">Pals</div>
+                <i class="fa fa-group"></i>
+                <div class="value">123</div>
+              </div>
+              <div>
+                <div class="title">Coffee</div>
+                <i class="fa fa-coffee"></i>
+                <div class="value infinity">∞</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="general">
+          <h1>Jane Doe</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a volutpat mauris, at molestie lacus. Nam
+            vestibulum sodales odio ut pulvinar.</p>
+          <span class="more">Mouse over the card for more info</span>
+        </div>
+      </div> -->
+
+  <!-- </div> -->
+  <!-- </div> -->
+
+  <div class="section_our_services_card" id="services">
+
+    <h2>We provide Special Service To The Industry Sector</h2>
+    <h5>We provide Professional Services with the latest Technologies.</h5>
+
+    <div class="row">
+      <!-- <i class="icon_left fa-solid fa-angle-left"></i> -->
+      <div class="card_new" *ngFor="let service of services">
+        <div class="card-image"><img src="../assets/{{service.shortName}}.png" loading="lazy"></div>
+        <div class="card-text">
+          <!-- <span class="date">4 days ago</span> -->
+          <h3>{{service.subject}}</h3>
+          <!-- <p>{{service.short_details}}</p> -->
+        </div>
+        <button (click)="navigate(service.subject);">Read more</button>
+      </div>
+    </div>
+    <i class="prev_arrow" appPrev><img src="../../../assets/left.png" loading="lazy"></i>
+    <!-- <button class="btn_prev" appPrev></button> -->
+    <i class="next_arrow" appNext><img src="../../../assets/right.png" loading="lazy"></i>
+  </div>
+
+  <!-- NEW SECTION INDUSTRIES START -->
+  <div class="twelve_shadow" style="box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);" id="industries">
+    <div class="twelve">
+      <h1>INDUSTRIES</h1>
+    </div>
+  </div>
+
+
+  <div class="industries"  id="industries-new">
+    <div class="background">
+      <div class="content">
+        <div class="block x1">
+          <img src="../../../assets/Power.jpg" style="height: 263px; width: 250px; position: relative;" loading="lazy">
+          <h4 class="title_ind" style="color: white;">Power</h4>
+          <div class="title_new" style="width: 250px;">
+            <h4>Power</h4>
+            <div class="button_new" (click)="navigate_industry('Power')"><h4 class="button_new_h4">Read More</h4></div>
+          </div>
+        </div>
+        <div class="block x2">
+          <img src="../../../assets/Oil.jpg" style="height: 263px; width: 300px; position: relative;" loading="lazy" width="100" height="100">
+          <h4 class="title_ind" style="color: white; top: 110px">Oil &</h4>
+          <h4 class="title_ind_new" style="color: white; top: 140px">Natural Gas</h4>
+          <div class="title_new" style="width: 300px;">
+            <h4 style="top: 110px;">Oil &</h4>
+            <h4 style="top: 140px;">Natural Gas</h4>
+            <div class="button_new" (click)="navigate_industry('OIL & NATURAL GAS')"><h4 class="button_new_h4">Read More</h4></div>
+          </div>
+        </div>
+        <div class="block x3">
+          <img src="../../../assets/Mining.jpg" style="height: 262px; width: 250px; position: relative;" loading="lazy">
+          <h4 class="title_ind" style="color: white; top: 110px">Mining &</h4>
+          <h4 class="title_ind_new" style="color: white; top: 140px">Minerals</h4>
+          <div class="title_new" style="width: 250px;">
+            <h4 style="top: 110px;">Mining &</h4>
+            <h4 style="top: 140px;">Minerals</h4>
+            <div class="button_new" (click)="navigate_industry('MINING & MINERALS')"><h4 class="button_new_h4">Read More</h4></div>
+          </div>
+        </div>
+        <div class="block x4">
+          <img src="../../../assets/Railways2.jpg" style="height: 262px; width: 300px; position: relative;" loading="lazy" width="100" height="100">
+          <h4 class="title_ind" style="color: white;">Railways</h4>
+          <div class="title_new">
+            <h4>Railways</h4>
+            <div class="button_new" (click)="navigate_industry('RAILWAYS')"><h4 class="button_new_h4">Read More</h4></div>
+          </div>
+        </div>
+        <div class="block x5">
+          <img src="../../../assets/Roads.jpg" style="height: 263px; width: 300px; position: relative;" loading="lazy">
+            <h4 class="title_ind" style="color: white; top: 110px">Roads and</h4>
+            <h4 class="title_ind_new" style="color: white; top: 140px">Highways</h4>
+            <div class="title_new" style="width: 300px;">
+              <h4 style="top: 110px;">Roads and</h4>
+              <h4 style="top: 140px;">Highways</h4>
+              <div class="button_new" (click)="navigate_industry('ROADS & HIGHWAYS')"><h4 class="button_new_h4">Read More</h4></div>
+            </div>
+        </div>
+        <div class="block x6">
+          <img src="../../../assets/Infra.jpg" style="height: 262px; width: 300px; position: relative;" loading="lazy" width="100" height="100">
+            <h4 class="title_ind" style="color: white; top: 110px">Construction</h4>
+            <h4 class="title_ind_new" style="color: white; top: 140px">& Infra</h4>
+            <div class="title_new" style="width: 300px;">
+              <h4 style="top: 110px;">Construction</h4>
+              <h4 style="top: 140px;">& Infra</h4>
+              <div class="button_new" (click)="navigate_industry('CONSTRUCTION & INFRA')"><h4 class="button_new_h4">Read More</h4></div>
+            </div>
+        </div>
+        <div class="block x7">
+          <img src="../../../assets/Telecom.jpg" style="height: 263px; width: 650px; position: relative;" loading="lazy">
+            <h4 class="title_ind" style="color: white; left: 59%;">Telecom</h4>
+            <div class="title_new" style="width: 650px; left: 59%;">
+              <h4>Telecom</h4>
+              <div class="button_new" (click)="navigate_industry('TELECOM')" style="left: 42%;"><h4 class="button_new_h4">Read More</h4></div>
+            </div>
+        </div>
+        <div class="block x8">
+          <img src="../../../assets/Automobiles.jpg" style="height: 263px; width: 255px; position: relative;" loading="lazy" width="100" height="100">
+          <h4 class="title_ind" style="color: white;">Automobiles</h4>
+          <div class="title_new" style="width: 255.5px; height: 267px;">
+            <h4>Automobiles</h4>
+            <div class="button_new" (click)="navigate_industry('AUTOMOBILES')"><h4 class="button_new_h4">Read More</h4></div>
+          </div>
+        </div>
+        <div class="block x9">
+          <img src="../../../assets/Ropeway.jpg" style="height: 262px; width: 255px; position: relative;" loading="lazy" width="100" height="100">
+            <h4 class="title_ind" style="color: white; top: 110px">Conveyor</h4>
+            <h4 class="title_ind_new" style="color: white; top: 140px">& Ropeways</h4>
+            <div class="title_new" style="width: 255px;">
+              <h4 style="top: 110px;">Conveyor</h4>
+              <h4 style="top: 140px;">& Ropeways</h4>
+              <div class="button_new" (click)="navigate_industry('CONVEYOR & ROPEWAYS')"><h4 class="button_new_h4">Read More</h4></div>
+            </div>
+        </div>
+        <div class="block x10">
+          <img src="../../../assets/Renewable.jpg" style="height: 262px; width: 297px; position: relative;" loading="lazy" width="100" height="100">
+          <h4 class="title_ind" style="color: white; top: 110px; left: 59.5%;">Renewable</h4>
+            <h4 class="title_ind_new" style="color: white; top: 140px; left: 59.5%">Resources</h4>
+            <div class="title_new" style="width: 297px; left: 59.5%;">
+              <h4 style="top: 110px;">Renewable</h4>
+              <h4 style="top: 140px;">Resources</h4>
+              <div class="button_new" (click)="navigate_industry('RENEWABLE RESOURCES')"><h4 class="button_new_h4">Read More</h4></div>
+            </div>
+        </div>
+        <div class="block x11">
+          <img src="../../../assets/Bridge.jpg" style="height: 262px; width: 300px; position: relative;" loading="lazy" width="100" height="100">
+          <h4 class="title_ind" style="color: white;">Bridges</h4>
+          <div class="title_new">
+            <h4>Bridges</h4>
+            <div class="button_new" (click)="navigate_industry('BRIDGES')"><h4 class="button_new_h4">Read More</h4></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- NEW SECTION INDUSTRIES END -->
+
+  <!-- <div class="card_design_new">
+    <div class="card_new">
+      <div class="card-image"></div>
+      <div class="card-text">
+        <span class="date">4 days ago</span>
+        <h2>Post One</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, Ducimus, repudiandae temporibus omnis illum maxime quod deserunt
+          eligendi dolor</p>
+      </div>
+    </div>
+    <div class="card_new">
+      <div class="card-image"></div>
+      <div class="card-text">
+        <span class="date">4 days ago</span>
+        <h2>Post Two</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, Ducimus, repudiandae temporibus omnis illum maxime quod deserunt
+          eligendi dolor</p>
+      </div>
+    </div>
+    <div class="card_new">
+      <div class="card-image"></div>
+      <div class="card-text">
+        <span class="date">4 days ago</span>
+        <h2>Post Three</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, Ducimus, repudiandae temporibus omnis illum maxime quod deserunt
+          eligendi dolor</p>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- OUR CLIENTS SECTION START -->
+
+  <header class="header_new">
+    <div class="overlay">
+      <h1 data-aos="zoom-in">Our Clients</h1>
+      <h3>Reasons for Choosing Us</h3>
+    </div>
+  </header>
+
+
+  <!-- <div class="our_clients_main">
+
+    <div class="our_clients">
+      <ul>
+        <li><img src="../../../assets/WBSEDCL.png" alt=""></li>
+        <li><img src="../../../assets/WBSETCL.png" alt=""></li>
+        <li><img src="../../../assets/L&T.png" alt=""></li>
+        <li><img src="../../../assets/BHEL.png" alt=""></li>
+        <li><img src="../../../assets/NMDC.png" alt=""></li>
+        <li><img src="../../../assets/Power_grid_Corp.png" alt=""></li>
+        <li><img src="../../../assets/Indian_oil.png" alt=""></li>
+        <li><img src="../../../assets/NHAI.png" alt=""></li>
+        <li><img src="../../../assets/PWD.png" alt=""></li>
+        <li><img src="../../../assets/ONGC.png" alt=""></li>
+      </ul>
+    </div>
+  </div> -->
+
+
+  <!-- OUR CLIENTS SECTION END -->
+
+  <!-- OUR CLIENTS NEW SECTION STARTS -->
+  <div class="our_services_background">
+    <div class="box">
+
+      <!-- adding CSS variable --i -->
+      <span style="--i:1;">
+        <img src="../../../assets/ONGC.png" loading="lazy">
+      </span>
+
+      <!-- adding CSS variable --i -->
+      <span style="--i:2;">
+        <img src="../../../assets/wbsedcl_logo.png" loading="lazy"  style="left: 20px;">
+      </span>
+
+      <!-- adding CSS variable --i -->
+      <span style="--i:3;">
+        <img src="../../../assets/L&T.png" loading="lazy">
+      </span>
+
+      <!-- adding CSS variable --i -->
+      <span style="--i:4;">
+        <img src="../../../assets/bhel_logo.png" loading="lazy"  style="left: 20px;">
+      </span>
+
+      <!-- adding CSS variable --i -->
+      <span style="--i:5;">
+        <img src="../../../assets/NMDC.png" loading="lazy">
+      </span>
+
+      <!-- adding CSS variable --i -->
+      <span style="--i:6;">
+        <img src="../../../assets/Power_grid_Corp.png" loading="lazy">
+      </span>
+
+      <!-- adding CSS variable --i -->
+      <span style="--i:7;">
+        <img src="../../../assets/indian_oil_logo_no_bg.png" loading="lazy">
+      </span>
+
+      <!-- adding CSS variable --i -->
+      <span style="--i:8;">
+        <img src="../../../assets/NHAI-removebg-preview.png" loading="lazy">
+      </span>
+
+      <!-- adding CSS variable --i -->
+      <span style="--i:9;">
+        <img src="../../../assets/PWD.png" loading="lazy">
+      </span>
+
+      <!-- adding CSS variable --i -->
+      <span style="--i:10;">
+        <img src="../../../assets/coal_india_no_bg.png" loading="lazy">
+      </span>
+
+      <!-- adding CSS variable --i -->
+      <span style="--i:11;">
+        <img src="../../../assets/BSNL.png" loading="lazy">
+      </span>
+
+      <!-- adding CSS variable --i -->
+      <span style="--i:12;">
+        <img src="../../../assets/gammon_india-removebg-preview.png" loading="lazy">
+      </span>
+
+      <!-- adding CSS variable --i -->
+      <span style="--i:13;">
+        <img src="../../../assets/KEC-removebg-preview.png" loading="lazy" style="left: 100px;">
+      </span>
+
+      <!-- adding CSS variable --i -->
+      <span style="--i:14;">
+        <img src="../../../assets/cesc-limited-logo.png" loading="lazy">
+      </span>
+
+      <!-- adding CSS variable --i -->
+      <span style="--i:15;">
+        <img src="../../../assets/Bajaj.jpg" loading="lazy"  style="left: -40px; width: 130px;">
+      </span>
+
+      <!-- adding CSS variable --i -->
+      <span style="--i:16;">
+        <img src="../../../assets/CRSPL.jpeg" loading="lazy">
+      </span>
+
+      <!-- adding CSS variable --i -->
+      <span style="--i:17;">
+        <img src="../../../assets/HDFC.png" loading="lazy">
+      </span>
+
+      <!-- adding CSS variable --i -->
+      <span style="--i:18;">
+        <img src="../../../assets/KMDA.png" loading="lazy">
+      </span>
+
+      <!-- adding CSS variable --i -->
+      <span style="--i:19;">
+        <img src="../../../assets/KPTL.png" loading="lazy">
+      </span>
+
+      <!-- adding CSS variable --i -->
+      <span style="--i:20;">
+        <img src="../../../assets/linxon.png" loading="lazy" style="padding-right: 10px;">
+      </span>
+
+      <!-- adding CSS variable --i -->
+      <span style="--i:21;">
+        <img src="../../../assets/Lumino.png" loading="lazy">
+      </span>
+
+      <!-- adding CSS variable --i -->
+      <span style="--i:22;">
+        <img src="../../../assets/NTPC.png" loading="lazy" style="padding-right: 20px;">
+      </span>
+
+      <!-- adding CSS variable --i -->
+      <span style="--i:23;">
+        <img src="../../../assets/RVNL_N.png" loading="lazy" style="left: -20px;">
+      </span>
+
+      <!-- adding CSS variable --i -->
+      <span style="--i:24;">
+        <img src="../../../assets/SBI.png" loading="lazy">
+      </span>
+
+      <!-- adding CSS variable --i -->
+      <span style="--i:25;">
+        <img src="../../../assets/SIEMENS.png" loading="lazy" style="width: 130px; left: -25px">
+      </span>
+
+      <!-- adding CSS variable --i -->
+      <span style="--i:26;">
+        <img src="../../../assets/Sunsteel PNG.png" loading="lazy">
+      </span>
+
+      <!-- adding CSS variable --i -->
+      <span style="--i:27;">
+        <img src="../../../assets/WBSETCL.png" loading="lazy" style="width: 145px;">
+      </span>
+
+    </div>
+  </div>
+
+
+  <!-- OUR CLIENTS NEW SECTION ENDS -->
+
+  <!-- NEW CARD START-->
+  <!-- <div class=container>
+    <div class=card1>
+      <div class=image>
+        <img href="#" src="https://i.pinimg.com/originals/a4/7b/a5/a47ba59b4a353e0928ef0551ca44f980.jpg">
+      </div>
+      <div class="content">
+        <h3>This is content</h3>
+        <p>DIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual
+          form of a document or a typeface without relying on meaningful content.</p>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- NEW CARD END -->
+
+  <!-- NEW CARD DESIGN -->
+
+  <!-- <section class="product">
+    <h2 class="product-category">Projects</h2>
+    <button class="pre-btn"><img src="../../../assets/arrow.png" alt=""></button>
+    <button class="nxt-btn"><img src="../../../assets/arrow.png" alt=""></button>
+    <div class="product-container">
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">50% off</span>
+          <img src="../../../assets/test.png" class="product-thumb" alt="">
+          <button class="card-btn">add to wishlist</button>
+        </div>
+        <div class="product-info">
+          <h2 class="product-brand">brand</h2>
+          <p class="product-short-description">a short line about the cloth..</p>
+          <span class="price">$20</span><span class="actual-price">$40</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">50% off</span>
+          <img src="../../../assets/test.png" class="product-thumb" alt="">
+          <button class="card-btn">add to wishlist</button>
+        </div>
+        <div class="product-info">
+          <h2 class="product-brand">brand</h2>
+          <p class="product-short-description">a short line about the cloth..</p>
+          <span class="price">$20</span><span class="actual-price">$40</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">50% off</span>
+          <img src="../../../assets/test.png" class="product-thumb" alt="">
+          <button class="card-btn">add to wishlist</button>
+        </div>
+        <div class="product-info">
+          <h2 class="product-brand">brand</h2>
+          <p class="product-short-description">a short line about the cloth..</p>
+          <span class="price">$20</span><span class="actual-price">$40</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">50% off</span>
+          <img src="../../../assets/test.png" class="product-thumb" alt="">
+          <button class="card-btn">add to wishlist</button>
+        </div>
+        <div class="product-info">
+          <h2 class="product-brand">brand</h2>
+          <p class="product-short-description">a short line about the cloth..</p>
+          <span class="price">$20</span><span class="actual-price">$40</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">50% off</span>
+          <img src="../../../assets/test.png" class="product-thumb" alt="">
+          <button class="card-btn">add to wishlist</button>
+        </div>
+        <div class="product-info">
+          <h2 class="product-brand">brand</h2>
+          <p class="product-short-description">a short line about the cloth..</p>
+          <span class="price">$20</span><span class="actual-price">$40</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">50% off</span>
+          <img src="../../../assets/test.png" class="product-thumb" alt="">
+          <button class="card-btn">add to wishlist</button>
+        </div>
+        <div class="product-info">
+          <h2 class="product-brand">brand</h2>
+          <p class="product-short-description">a short line about the cloth..</p>
+          <span class="price">$20</span><span class="actual-price">$40</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">50% off</span>
+          <img src="../../../assets/test.png" class="product-thumb" alt="">
+          <button class="card-btn">add to wishlist</button>
+        </div>
+        <div class="product-info">
+          <h2 class="product-brand">brand</h2>
+          <p class="product-short-description">a short line about the cloth..</p>
+          <span class="price">$20</span><span class="actual-price">$40</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">50% off</span>
+          <img src="../../../assets/test.png" class="product-thumb" alt="">
+          <button class="card-btn">add to wishlist</button>
+        </div>
+        <div class="product-info">
+          <h2 class="product-brand">brand</h2>
+          <p class="product-short-description">a short line about the cloth..</p>
+          <span class="price">$20</span><span class="actual-price">$40</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">50% off</span>
+          <img src="../../../assets/test.png" class="product-thumb" alt="">
+          <button class="card-btn">add to wishlist</button>
+        </div>
+        <div class="product-info">
+          <h2 class="product-brand">brand</h2>
+          <p class="product-short-description">a short line about the cloth..</p>
+          <span class="price">$20</span><span class="actual-price">$40</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">50% off</span>
+          <img src="../../../assets/test.png" class="product-thumb" alt="">
+          <button class="card-btn">add to wishlist</button>
+        </div>
+        <div class="product-info">
+          <h2 class="product-brand">brand</h2>
+          <p class="product-short-description">a short line about the cloth..</p>
+          <span class="price">$20</span><span class="actual-price">$40</span>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- <ng-image-slider [images]="imgCollection" #nav></ng-image-slider> -->
+
+  <!-- FOOTER -->
+  <!-- <footer class="footer"> -->
+  <!-- <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+    </div> -->
+  <!-- <ul class="social-icon"> -->
+  <!-- <li class="social-icon__item"><a class="social-icon__link" href="#"> -->
+  <!-- <ion-icon name="logo-facebook"></ion-icon> -->
+  <!-- </a></li> -->
+  <!-- <li class="social-icon__item"><a class="social-icon__link" href="#"> -->
+  <!-- <ion-icon name="logo-twitter"></ion-icon> -->
+  <!-- </a></li> -->
+  <!-- <li class="social-icon__item"><a class="social-icon__link" href="#"> -->
+  <!-- <ion-icon name="logo-linkedin"></ion-icon> -->
+  <!-- </a></li> -->
+  <!-- <li class="social-icon__item"><a class="social-icon__link" href="#"> -->
+  <!-- <ion-icon name="logo-instagram"></ion-icon> -->
+  <!-- </a></li>
+    </ul>
+    <ul class="menu">
+      <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+
+    </ul>
+    <p>&copy;2023 FOUNDATION CONSULTANTS | All Rights Reserved</p>
+  </footer> -->
+
+  <!-- NEW FOOTER START -->
+
+  <footer class="footer-section">
+    <div class="container_new" style="top: -30px; height: 50vh;">
+        <div class="footer-cta pt-5 pb-5">
+            <div class="row-footer">
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="fas fa-map-marker-alt shake" (click)="openMap()"></i>
+                        <div class="cta-text">
+                            <h4>Find us</h4>
+                            <span>91/33 Tollygunge Road. Kolkata - 700033</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="fas fa-phone"></i>
+                        <div class="cta-text">
+                            <h4>Call us</h4>
+                            <span>98765432100</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta-mail">
+                        <i class="far fa-envelope-open"></i>
+                        <div class="cta-text-email">
+                            <h4>Mail us</h4>
+                            <h6>info@foundationconsultants.in</h6>
+                            <h6 style="margin-top: 5px; color: #e0dede;">geotechnic_soil@yahoo.com</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-content pt-5 pb-5">
+            <div class="row-footer-new">
+                <div class="col-xl-4 col-lg-4 mb-50">
+                    <div class="footer-widget">
+                        <!-- <div class="footer-logo">
+                            <a href="index.html"><img src="https://i.ibb.co/QDy827D/ak-logo.png" class="img-fluid" alt="logo"></a>
+                        </div> -->
+                        <div class="footer-text">
+                            <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing
+                            elit,Lorem ipsum dolor sit amet.</p>
+                        </div>
+                        <div class="footer-social-icon">
+                            <span>Follow us</span>
+                            <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
+                            <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                            <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3>Useful Links</h3>
+                        </div>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a (click)="goToPartNextPage('industries-new')">Industries</a></li>
+                            <!-- <li><a href="#">services</a></li> -->
+                            <!-- <li><a href="#">portfolio</a></li> -->
+                            <!-- <li><a href="#">Contact</a></li> -->
+                            <li><a href="/aboutUs">About us</a></li>
+                            <li><a (click)="goToPartNextPage('services')">Our Services</a></li>
+                            <li><a (click)="goToPartAboutPage('expertTeam')">Expert Team</a></li>
+                            <li><a href="/contactUs">Contact us</a></li>
+                            <!-- <li><a href="#">Latest News</a></li> -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading-new">
+                            <h3>Subscribe</h3>
+                        </div>
+                        <div class="footer-text-new mb-25">
+                            <p>Don't miss to subscribe to our new feeds, kindly fill the form below.</p>
+                        </div>
+                        <div class="subscribe-form">
+                            <form action="#">
+                                <input type="text" placeholder="Email Address">
+                                <button style="top: -53px; right: -450px; position: relative;"><i class="fab fa-telegram-plane"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-area">
+        <!-- <div class="container_new"> -->
+            <div class="row_footer">
+                <!-- <div class="col-xl-6 col-lg-6 text-center text-lg-left"> -->
+                    <div class="copyright-text">
+                        <p>Copyright &copy; 2023, All Right Reserved <a href="#">FOUNDATION CONSULTANTS</a></p>
+                    </div>
+                <!-- </div> -->
+                <!-- <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Policy</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div> -->
+            </div>
+    </div>
+    <!-- </div> -->
+</footer>
+
+  <!-- NEW FOOTER END -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

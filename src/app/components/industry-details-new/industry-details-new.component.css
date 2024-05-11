@@ -1,0 +1,2519 @@
+@font-face {
+  font-family: Outfit;
+  src: url(../../../fonts/Outfit-SemiBold.ttf);
+}
+
+.Outfit {
+  font-family: Outfit;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR CSS START */
+.nav {
+  height: 80px;
+  width: 100%;
+  background: white;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+}
+
+.nav img:first-of-type{
+  height: 40px;
+  width: 40px;
+  top: 20px;
+  position: relative;
+  left: 135px;
+}
+
+.nav>.nav-header {
+  display: inline;
+}
+
+.nav>.nav-header>.nav-title {
+  display: inline-block;
+  font-size: 35px;
+  color: #0f1141;
+  font-weight: 700;
+  /* padding: 10px 10px 10px 10px; */
+  margin-left: 150px;
+  width: 80%;
+  margin-top: 15px;
+}
+
+.nav>.nav-btn {
+  display: none;
+}
+
+.nav>.nav-links {
+  display: flex;
+  margin-left: 200px;
+  font-size: 20px;
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+.nav>.nav-links>a {
+  display: flex;
+  padding: 5px;
+  padding-top: 10px;
+  /* text-decoration: none; */
+  color: #0f1141;
+  /* margin: 3px;
+    margin-right: 15px; */
+  margin: 0 10px;
+  font-weight: 600;
+  /* justify-content: space-between; */
+  /* padding-top: 11px; */
+  font: 25px;
+  font-family: Outfit;
+  z-index: 0;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.nav>.nav-links>a:hover {
+  background-color: #e25504;
+  border-radius: 5px;
+  max-height: 50px;
+}
+
+.nav>#nav-check {
+  display: none;
+}
+
+@media (max-width:600px) {
+  .nav>.nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+
+  .nav>.nav-btn>label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+
+  .nav>.nav-btn>label:hover,
+  .nav #nav-check:checked~.nav-btn>label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .nav>.nav-btn>label>span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+
+  .nav>.nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #333;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+
+  .nav>.nav-links>a {
+    display: block;
+    width: 100%;
+  }
+
+  .nav>#nav-check:not(:checked)~.nav-links {
+    height: 0px;
+  }
+
+  .nav>#nav-check:checked~.nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+
+/* NAVBAR CSS END */
+
+/* CSS FOR DROPDOWN MENU START */
+
+.top-left-top a:hover,
+.dropdown:hover .dropbtn {
+  background-color: #e25504;
+}
+
+.dropbtn {
+  /* position: relative;
+  border: 0;
+  opacity: 1;
+  background: transparent;
+  color: #0f1141;
+  top: -4.5px;
+  font-family: Outfit; */
+  border: 0;
+  color: #0F1141;
+  margin-top: 0px;
+  font: 21px Outfit;
+  /* font-weight: 800; */
+  opacity: 1;
+  background: transparent;
+  padding-bottom: 20px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  /* min-width: 20px; */
+  right: -160px;
+  top: 35px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin-top: 10px;
+  padding-top: 2px;
+  border-radius: 5px;
+  width: 250px;
+}
+
+.dropdown-content-industries {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  /* min-width: 20px; */
+  right: -145px;
+  top: 33px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin-top: 10px;
+  padding-top: 2px;
+  border-radius: 5px;
+  width: 250px;
+}
+
+.dropdown-content li {
+  float: none;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  padding: 10px;
+  list-style-type: none;
+  font-weight: 550;
+  font-size: 20px;
+  margin: 3px;
+}
+
+.dropdown-content-industries li {
+  float: none;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  padding: 10px;
+  list-style-type: none;
+  font-size: 20px;
+  font-weight: 550;
+  margin: 3px;
+}
+
+.dropdown-content li:hover {
+  background-color: #e25504;
+  border-radius: 3px;
+  /* padding: 0; */
+}
+
+.dropdown-content-industries li:hover {
+  background-color: #e25504;
+  border-radius: 3px;
+  /* padding: 0; */
+}
+
+/* div.dropdown-content li:before {
+  content: attr(alt);
+  transition: all 0.3s;
+  transform: scale(0.8);
+  opacity: 1;
+  padding: 0;
+} */
+
+/* .dropdown-content li:hover:before {
+  transform: scale(1);
+  opacity: 0;
+  padding: 0;
+} */
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  /* padding: 0; */
+}
+
+.dropdown:hover .dropdown-content-industries {
+  display: block;
+  /* padding: 0; */
+}
+
+/* CSS FOR DROPDOWN MENU END */
+
+/* HEADER Services CSS START */
+
+.header_services {
+  position: relative;
+  top: -100px;
+  height: 130px;
+  background: #0f1141;
+  background-image: url('https://garantiwebdesign.com/wordpress/industry/wp-content/uploads/2022/10/header-industry-4.jpg');
+  text-align: left;
+}
+
+.header_services h1 {
+  color: white;
+  position: relative;
+  top: 30%;
+  font-size: 48px;
+  /* margin-left: 300px; */
+  margin-top: 100px;
+  margin-bottom: 50px;
+  margin-left: 180px;
+}
+
+/* HEADER Services US CSS END */
+
+/* CSS FOR industry_details START */
+
+.industry_details {
+  display: flex;
+  width: 100%;
+  position: relative;
+  /* padding: 100px; */
+  padding-bottom: 0;
+  top: -100px;
+  height: 100vh;
+  background: #0F1141;
+  background: linear-gradient(to right,
+      #fff 0%,
+      #fff 40%,
+      #eae8e8 40%,
+      #96969a 100%);
+}
+
+/* CSS FOR industry_details END */
+
+/* CSS FOR Industry details form START */
+
+.industry_details_forms {
+  margin-right: 40px;
+}
+
+/* CSS For Industry details form end */
+
+/* CSS FOR industry_details_contact_form QUOTATION START */
+
+.industry_details_contact_form {
+  background: white;
+  width: 500px;
+  position: relative;
+  height: 90vh;
+  top: -50px;
+  /* margin-left: 250px; */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.industry_details_contact_form h1,
+h5 {
+  color: #0f1141;
+  text-align: center;
+}
+
+label {
+  color: #0f1141;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.industry_details_contact_form .textinput {
+  width: 98%;
+  min-height: 100px;
+  max-height: 120px;
+  padding-top: 20px;
+  padding-right: 15px;
+  padding-bottom: 20px;
+  padding-left: 15px;
+  border-radius: 3px;
+  border-top-width: 2px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-color: #eeeeee;
+  border-right-color: #eeeeee;
+  border-bottom-color: #eeeeee;
+  border-left-color: #eeeeee;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  font-size: 16px;
+}
+
+input[type=text],
+input[type=email],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #0f1141;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* CSS FOR industry_details_contact_form QUOTATION END */
+
+/* CSS for industry_list START */
+
+.industry_list {
+  text-decoration: none;
+  background: #0f1141;
+  width: 100%;
+  height: 500px;
+  border-radius: 5px;
+  /* padding-top: 30px; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.industry_list ul {
+  padding-left: 0;
+}
+
+.industry_list ul li {
+  list-style-type: none;
+  position: relative;
+  width: 100%;
+  height: 50px;
+  font-size: 28px;
+  padding-top: 5px;
+  font-weight: 600;
+  color: #fff;
+  text-align: left;
+  padding-left: 30px;
+  border-top: 0.5px solid white;
+  /* margin-left: 15%; */
+}
+
+.industry_list ul li:hover {
+  background: orange;
+  /* text-align: left; */
+  /* width: 93%; */
+  /* border-radius: 5px; */
+}
+
+/* CSS for industry_list END */
+
+/* CSS FOR Industry details image start */
+
+.industry_details_img {
+  position: relative;
+  /* display: flex; */
+  top: -50px;
+  width: 57%;
+}
+
+.industry_details_img img {
+  /* border-radius: 5px; */
+  height: 403px;
+  min-width: 700px;
+  margin-bottom: 30px;
+}
+
+.industry_details_img p {
+  text-align: left;
+  top: 130px;
+  position: relative;
+  font-size: 19px;
+  width: 800px;
+  min-width: 600px;
+  margin: 0 40px;
+  right: 55%;
+  animation-duration: 2s;
+  animation-name: slidein;
+  color: black;
+  /* background: #0F1141; */
+  /* animation-iteration-count: infinite; */
+}
+
+.industry_details_img .img1{
+  position: relative;
+  /* left: -40px; */
+  top: 50px;
+  height: 55vh;
+}
+
+.industry_details_img .img2{
+  top: 482px;
+  position: relative;
+  left: -890px;
+  min-width: 420px;
+  height: 360px;
+}
+
+.industry_details_img .img3{
+  top: 482px;
+  position: relative;
+  left: -890px;
+  min-width: 430px;
+  height: 360px;
+}
+
+/* .img2{
+  top: 450px;
+  position: relative;
+  left: -890px;
+  min-width: 420px;
+} */
+
+/*.img3{
+  top: 450px;
+  position: relative;
+  left: -890px;
+  min-width: 430px;
+} */
+
+@keyframes slidein {
+  0% {
+    margin-left: 100px;
+  }
+
+  /* 50% {
+        margin-left: 50px;
+      } */
+  100% {
+    margin-left: 40px;
+  }
+}
+
+/* CSS for industry details image END */
+
+/* CSS for OUR partners heading Start */
+
+/* CSS for OUR partners heading Ends */
+.our_partners_header{
+  text-align: center;
+  color: #0f1141;
+  font-size: 55px;
+  font-family: Outfit;
+}
+
+.our_partners_header_msg{
+  text-align: center;
+}
+
+/* CSS FOR SERVICE BENEFITS START */
+
+.service_benefits {
+  background-image: url('https://garantiwebdesign.com/wordpress/industry/wp-content/uploads/2022/10/header-industry-4.jpg');
+  height: 110vh;
+  color: white;
+  text-align: left;
+  padding-left: 200px;
+  padding-top: 150px;
+  margin-bottom: 30px;
+  display: flex;
+}
+
+.service_benefits_detail {
+  width: 500px;
+  margin-bottom: 50px;
+  color: rgb(185, 189, 193);
+}
+
+.service_benefits_detail h2{
+  width: 400px;
+  color: white;
+}
+
+/* CSS FOR SERVICE BENEFITS END */
+
+/* CSS FOR QUOTATION START */
+
+.quotation {
+  background: white;
+  width: 500px;
+  position: relative;
+  height: 90vh;
+  top: -60px;
+  margin-left: 250px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.quotation h1,
+h5 {
+  color: #0f1141;
+  text-align: center;
+}
+
+label {
+  color: #0f1141;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+input[type=text],
+input[type=email],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #0f1141;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* CSS FOR QUOTATION END */
+
+/* NEW FOOTER CSS START */
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+.footer-section {
+  background: #0f1141;
+  position: relative;
+  height: 65vh;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.footer-cta {
+  border-bottom: 1px solid #373636;
+  padding-left: 160px;
+  padding-right: 180px;
+}
+
+.single-cta {
+  text-align: center;
+}
+
+.single-cta i {
+  color: #e25504;
+  font-size: 30px;
+  position: relative;
+  /* float: left; */
+  margin-bottom: 8px;
+  margin-left: 60px;
+  top: -10px;
+  text-align: center;
+}
+
+.single-cta-mail {
+  text-align: center;
+}
+
+.single-cta-mail i {
+  color: #e25504;
+  font-size: 30px;
+  position: relative;
+  /* float: left; */
+  margin-bottom: 8px;
+  margin-left: 60px;
+  top: -35px;
+  text-align: center;
+}
+
+.cta-text {
+  padding-left: 15px;
+  display: inline-block;
+}
+
+.cta-text h4 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.cta-text h6 {
+  color: #e0dede;
+  font-size: 15px;
+}
+
+.cta-text span {
+  color: #e0dede;
+  font-size: 15px;
+}
+
+.cta-text-email {
+  padding-left: 15px;
+  display: inline-block;
+}
+.cta-text-email h4 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.cta-text-email h6 {
+  color: #e0dede;
+  font-size: 15px;
+}
+.cta-text-email span {
+    color: #e0dede;
+    font-size: 15px;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 2;
+}
+
+.footer-pattern img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 330px;
+  background-size: cover;
+  background-position: 100% 100%;
+}
+
+.footer-logo {
+  margin-bottom: 30px;
+}
+
+.footer-logo img {
+  max-width: 200px;
+}
+
+.footer-text p {
+  margin-bottom: 14px;
+  margin-left: 20px;
+  font-size: 14px;
+  color: #e0dede;
+  line-height: 28px;
+  text-align: left;
+}
+
+.footer-text-new p {
+  margin-bottom: 14px;
+  /* margin-left: 20px; */
+  font-size: 14px;
+  color: #e0dede;
+  line-height: 28px;
+  text-align: left;
+}
+
+.footer-social-icon {
+  text-align: center;
+}
+
+.footer-social-icon span {
+  color: #fff;
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+}
+
+.footer-social-icon a {
+  color: #fff;
+  font-size: 16px;
+  margin-right: 15px;
+}
+
+.footer-social-icon i {
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 50%;
+}
+
+.facebook-bg {
+  background: #3B5998;
+}
+
+.twitter-bg {
+  background: #55ACEE;
+}
+
+.google-bg {
+  background: #DD4B39;
+}
+
+.footer-widget-heading h3 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  position: relative;
+  text-align: left;
+  padding-left: 30px;
+}
+
+.footer-widget-heading-new h3 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  position: relative;
+  text-align: left;
+}
+
+.footer-widget-heading h3::before {
+  content: "";
+  position: absolute;
+  /* left: 215px; */
+  bottom: -15px;
+  height: 2px;
+  width: 50px;
+  background: #e25504;
+}
+
+.footer-widget-heading-new h3::before {
+  content: "";
+  position: absolute;
+  /* left: 215px; */
+  bottom: -15px;
+  height: 2px;
+  width: 50px;
+  background: #e25504;
+}
+
+.footer-widget ul li {
+  display: inline-block;
+  /* float: left; */
+  width: 50%;
+  margin-bottom: 12px;
+  text-align: left;
+  padding-left: 30px;
+}
+
+.footer-widget ul li a:hover {
+  color: #e25504;
+}
+
+.footer-widget ul li a {
+  color: #fcfafa;
+  text-transform: capitalize;
+}
+
+.subscribe-form {
+  position: relative;
+  overflow: hidden;
+}
+
+.subscribe-form input {
+  width: 100%;
+  padding: 14px 28px;
+  background: White;
+  border: 1px solid #2E2E2E;
+  color: #2E2E2E;
+}
+
+.subscribe-form button {
+  position: absolute;
+  right: 0;
+  background: #e25504;
+  padding: 13px 20px;
+  border: 1px solid #e25504;
+  top: 10;
+}
+
+.subscribe-form button i {
+  color: #fff;
+  font-size: 22px;
+  transform: rotate(-6deg);
+}
+
+.row_footer {
+  text-align: center;
+}
+
+.copyright-area {
+  background: #202020;
+  padding: 25px 0;
+  width: 100%;
+}
+
+.copyright-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #878787;
+}
+
+.copyright-text p a {
+  color: #e25504;
+}
+
+.footer-menu li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.footer-menu li:hover a {
+  color: #e25504;
+}
+
+.footer-menu li a {
+  font-size: 14px;
+  color: #878787;
+}
+
+/* NEW FOOTER CSS END */
+
+/* OUR PARTNERS CSS STARTS */
+
+body {
+  align-items: center;
+  justify-content: center;
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  overflow-x: hidden;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-250px * 7))
+  }
+}
+
+.slider {
+  height: 250px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: auto;
+  margin-top: 50px;
+}
+
+.slider .slide-track {
+  animation: scroll 40s linear infinite;
+  display: flex;
+  width: calc(250px * 14);
+}
+
+.slider .slide {
+  height: 100px;
+  width: 250px;
+}
+
+
+/* OUR PARTNERS CSS END */
+
+/* PAGE LOAD ANIMATION START*/
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* PAGE LOAD ANIMATION END*/
+
+/* SHAKE ANIMATION FOR MAP ICON START */
+
+/* http://waitanimate.wstone.io/#!/ */
+.shake {
+  animation: shake-animation 4.72s ease infinite;
+  transform-origin: 50% 50%;
+}
+
+@keyframes shake-animation {
+  0% {
+    transform: translate(0, 0)
+  }
+
+  1.78571% {
+    transform: translate(5px, 0)
+  }
+
+  3.57143% {
+    transform: translate(0, 0)
+  }
+
+  5.35714% {
+    transform: translate(5px, 0)
+  }
+
+  7.14286% {
+    transform: translate(0, 0)
+  }
+
+  8.92857% {
+    transform: translate(5px, 0)
+  }
+
+  10.71429% {
+    transform: translate(0, 0)
+  }
+
+  100% {
+    transform: translate(0, 0)
+  }
+}
+
+/* SHAKE ANIMATION FOR MAP ICON END */
+
+/* HAMBURGER MENU STYLE STARTS */
+
+    /* Menu Icon */
+    .hamb{
+      cursor: pointer;
+      float: right;
+      padding: 40px 20px;
+      right: -60px;
+      position: relative;
+    }/* Style label tag */
+    
+    .hamb-line {
+      background: black;
+      display: block;
+      height: 2px;
+      position: relative;
+      width: 24px;
+    
+    } /* Style span tag */
+    
+    .hamb-line::before,
+    .hamb-line::after{
+      background: black;
+      content: '';
+      display: block;
+      height: 100%;
+      position: absolute;
+      transition: all .2s ease-out;
+      width: 100%;
+    }
+    .hamb-line::before{
+      top: 5px;
+    }
+    .hamb-line::after{
+      top: -5px;
+    }
+    
+    .side-menu {
+      display: none;
+    } /* Hide checkbox */
+    
+    /* Toggle menu icon */
+    .side-menu:checked ~ .hamb + .nav-links{
+      top: -20px;
+      position: relative;
+      height: 700px;
+      background: white;
+      width: 375px;
+      margin-left: 0;
+      text-align: left;
+      opacity: 50;
+    }
+    .side-menu:checked ~ .hamb + .nav-links > a{
+      width: 350px;
+    }
+    .side-menu:checked ~ .hamb + .nav-links > a > .dropbtn{
+      padding-bottom: 0;
+    }
+    .side-menu:checked ~ .hamb + .nav-links > a > .dropbtn-industries{
+      padding-bottom: 0;
+    }
+    .side-menu:checked ~ .hamb + .nav-links > a > .dropdown-content{
+      /* opacity: 1; */
+      top: 20px;
+      left: 100px;
+      width: 250px;
+    }
+    .side-menu:checked ~ .hamb + .nav-links > a > .dropdown-content-industries{
+      /* opacity: 1; */
+      top: 20px;
+      left: 100px;
+      width: 250px;
+    }
+    .side-menu:checked ~ .hamb .hamb-line {
+      background: transparent;
+    }
+    .side-menu:checked ~ .hamb .hamb-line::before {
+      transform: rotate(-45deg);
+      top:0;
+    }
+    .side-menu:checked ~ .hamb .hamb-line::after {
+      transform: rotate(45deg);
+      top:0;
+    }
+    
+    /* Responsiveness Starts*/
+    @media (min-width: 1000px) {
+      /* .nav{
+          max-height: none;
+          top: 0;
+          position: relative;
+          float: right;
+          width: fit-content;
+          background-color: transparent;
+      } */
+      .menu li{
+          float: left;
+      }
+      .menu a:hover{
+          background-color: transparent;
+          color: var(--gray);
+    
+      }
+    
+      .hamb{
+          display: none;
+      }
+    }
+    
+    /* Responsiveness Ends*/
+
+    /* HAMBURGER MENU STYLES ENDS */
+
+/* * {
+    background: #000 !important;
+    color: #0f0 !important;
+    outline: solid #f00 1px !important;
+  } */
+
+  /* RESPONSIVE CSS START */
+    @media (max-width:400px) {
+      .nav {
+        /* height: 10%; */
+        width: 100%;
+        background: white;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+      }
+  
+      .nav img:first-of-type {
+        left: 2%;
+        top: 30%;
+      }
+  
+      .nav>.nav-header {
+        display: inline;
+        position: relative;
+        top: 50%;
+        left: -10%;
+      }
+  
+      .nav>.nav-header>.nav-title {
+        display: inline-block;
+        font-size: 15px;
+        color: #0f1141;
+        font-weight: 700;
+        /* padding: 10px 10px 10px 10px; */
+        margin-left: 25%;
+        width: 80%;
+        position: relative;
+        top: -40%;
+      }
+  
+      .nav>.nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 10px;
+        top: 25px;
+      }
+  
+      .nav>.nav-btn>label {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        padding: 8px;
+      }
+  
+      .nav>.nav-btn>label:hover,
+      .nav #nav-check:checked~.nav-btn>label {
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+  
+      .nav>.nav-btn>label>span {
+        display: block;
+        width: 15px;
+        height: 5px;
+        border-top: 2px solid #eee;
+      }
+  
+      .nav>.nav-links {
+        position: absolute;
+        display: block;
+        width: 40%;
+        background-color: #333;
+        height: 0px;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 30px;
+        left: 0px;
+      }
+  
+      .nav>.nav-links>a {
+        display: block;
+        width: 50%;
+      }
+  
+      .nav>#nav-check:not(:checked)~.nav-links {
+        height: 0px;
+      }
+  
+      .nav>#nav-check:checked~.nav-links {
+        height: calc(50vh - 25px);
+        overflow-y: auto;
+      }
+
+      .header_services{
+        position: relative;
+        top: -100px;
+        height: 75px;
+        background: #0f1141;
+        width: 100%;
+        background-image: url('https://garantiwebdesign.com/wordpress/industry/wp-content/uploads/2022/10/header-industry-4.jpg');
+        /* text-align: center; */
+      }
+      .header_services h1{
+        color: white;
+        position: relative;
+        top: 20%;
+        font-size: 25px;
+        margin-left: 50px;
+        margin-top: 100px;
+        margin-bottom: 50px;
+      }
+
+      .industry_details{
+        /* display: inline; */
+        background: #fff
+      }
+
+      .industry_details_img{
+        display: block;
+        width: 89%;
+
+      }
+
+      .industry_details_img img {
+        height: 400px;
+        min-width: 0;
+        margin-bottom: 30px;
+      }
+
+      .industry_details_img .img1{
+        width: 112%;
+        padding: 10px;
+      }
+
+      .industry_details_img .img2{
+        width: 10%;
+        top: 20px;
+        height: 20rem;
+        padding: 10px;
+        left: -40px;
+        padding-right: 55px;
+      }
+
+      .industry_details_img .img3{
+        width: 10%;
+        top: -10px;
+        height: 20rem;
+        padding: 10px;
+        left: -40px;
+        padding-right: 65px;
+      }
+
+      .industry_details_img p{
+        top: -40px;
+        min-width: 0;
+        width: 350px;
+        font-size: 15px;
+        margin-left: 155px;
+        margin-top: 50px;
+        text-align: center;
+      }
+
+      .our_partners_header{
+        font-size: 25px;
+        position: relative;
+        top: 650px;
+      }
+      
+      .our_partners_header_msg{
+        text-align: center;
+        position: relative;
+        top: 665px;
+      }
+      .slider {
+        top: 650px;
+      }
+      .service_benefits{
+        position: relative;
+        top: 550px;
+        height: 200vh;
+        padding-left: 0;
+        margin-bottom: 30px;
+        display: block;
+      }
+      .service_benefits_detail {
+        width: 350px;
+        margin-bottom: 50px;
+        color: rgb(185, 189, 193);
+        position: relative;
+        top: -70px;
+        padding-left: 30px;
+      }
+      .service_benefits_detail h2{
+        width: 300px;
+      }
+
+      .quotation {
+        background: white;
+        width: auto;
+        position: relative;
+        height: 104vh;
+        /* top: -60px; */
+        margin-left: 0;
+        border-radius: 10px;
+        padding: 20px;
+      }
+
+      .row-footer{
+        left: 0;
+      }
+
+      .footer-section {
+        position: relative;
+        top: 430px;
+        height: 200vh;
+      }
+  
+      .footer-cta {
+        border-bottom: 1px solid #373636;
+        padding-left: 60px;
+        padding-right: 180px;
+      }
+      .single-cta{
+        margin-left: 20px;
+      }
+      .single-cta-mail{
+        margin-left: 20px;
+      }
+      .single-cta-mail i {
+        margin-top: 20px;
+      }
+      .cta-text{
+        /* margin-left: 20px; */
+        padding-left: 10px;
+        margin-bottom: 30px;
+      }
+      .cta-text span{
+        font-size: 10px;
+        display:block;
+        width: 120px;
+      }
+      .cta-text-email {
+        padding-left: 5px;
+        position: relative;
+        top: -20px;
+        display: inline-block;
+      }
+      
+      .cta-text-email h4 {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 2px;
+      }
+      .cta-text-email h6 {
+        color: #e0dede;
+        font-size: 10px;
+      }
+      .cta-text-email span {
+          color: #e0dede;
+          font-size: 15px;
+      }
+  
+      .copyright-area{
+        background: #202020;
+        padding: 25px 0;
+        width: 100%;
+        position: relative;
+        top: 860px;
+        opacity: 100;
+      }
+      .copyright-text p {
+        margin: 0;
+        font-size: 14px;
+        color: #878787;
+      }
+      .copyright-text p a{
+        color: #e25504;
+      }
+      .footer-widget{
+        margin-top: 30px;
+      }
+      .footer-widget-heading{
+        position: relative;
+        left: -30px;
+      }
+    }
+
+    @media (min-width:401px) and (max-width:500px){
+      .nav {
+        /* height: 10%; */
+        width: 100%;
+        background: white;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+      }
+  
+      .nav img:first-of-type {
+        left: 2%;
+        top: 30%;
+      }
+  
+      .nav>.nav-header {
+        display: inline;
+        position: relative;
+        top: 50%;
+        left: -10%;
+      }
+  
+      .nav>.nav-header>.nav-title {
+        display: inline-block;
+        font-size: 15px;
+        color: #0f1141;
+        font-weight: 700;
+        /* padding: 10px 10px 10px 10px; */
+        margin-left: 25%;
+        width: 80%;
+        position: relative;
+        top: -40%;
+      }
+  
+      .nav>.nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 10px;
+        top: 25px;
+      }
+  
+      .nav>.nav-btn>label {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        padding: 8px;
+      }
+  
+      .nav>.nav-btn>label:hover,
+      .nav #nav-check:checked~.nav-btn>label {
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+  
+      .nav>.nav-btn>label>span {
+        display: block;
+        width: 15px;
+        height: 5px;
+        border-top: 2px solid #eee;
+      }
+  
+      .nav>.nav-links {
+        position: absolute;
+        display: block;
+        width: 40%;
+        background-color: #333;
+        height: 0px;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 30px;
+        left: 20px;
+      }
+  
+      .nav>.nav-links>a {
+        display: block;
+        width: 50%;
+      }
+  
+      .nav>#nav-check:not(:checked)~.nav-links {
+        height: 0px;
+      }
+  
+      .nav>#nav-check:checked~.nav-links {
+        height: calc(50vh - 25px);
+        overflow-y: auto;
+      }
+
+      .hamb{
+        right: -30%;
+      }
+
+      .side-menu:checked ~ .hamb + .nav-links{
+        width: 440px;
+      }
+
+      .side-menu:checked ~ .hamb + .nav-links > a > .dropdown-content{
+        /* opacity: 1; */
+        top: 75px;
+        left: 150px;
+      }
+
+      .header_services{
+        position: relative;
+        top: -100px;
+        height: 75px;
+        background: #0f1141;
+        width: 100%;
+        background-image: url('https://garantiwebdesign.com/wordpress/industry/wp-content/uploads/2022/10/header-industry-4.jpg');
+        /* text-align: center; */
+      }
+      .header_services h1{
+        color: white;
+        position: relative;
+        top: 20%;
+        font-size: 25px;
+        margin-left: 50px;
+        margin-top: 100px;
+        margin-bottom: 50px;
+      }
+
+      .industry_details{
+        /* display: inline; */
+        background: #fff
+      }
+
+      .industry_details_img{
+        display: block;
+        width: 89%;
+
+      }
+
+      .industry_details_img img {
+        height: 400px;
+        min-width: 0;
+        margin-bottom: 30px;
+      }
+
+      .industry_details_img .img1{
+        width: 112%;
+        padding: 10px;
+      }
+
+      .industry_details_img .img2{
+        width: 10%;
+        top: 20px;
+        height: 20rem;
+        padding: 10px;
+        left: 20px;
+        padding-right: 55px;
+      }
+
+      .industry_details_img .img3{
+        width: 10%;
+        top: -10px;
+        height: 20rem;
+        padding: 10px;
+        left: 20px;
+        padding-right: 65px;
+      }
+
+      .industry_details_img p{
+        top: -40px;
+        min-width: 0;
+        width: 350px;
+        font-size: 15px;
+        right: 10px;
+        margin-top: 50px;
+        text-align: center;
+      }
+
+      .our_partners_header{
+        font-size: 25px;
+        position: relative;
+        top: 650px;
+      }
+      
+      .our_partners_header_msg{
+        text-align: center;
+        position: relative;
+        top: 665px;
+        width: 90%;
+        margin-left: 5%;
+      }
+      .slider {
+        top: 650px;
+      }
+      .service_benefits{
+        position: relative;
+        top: 550px;
+        height: 200vh;
+        padding-left: 0;
+        margin-bottom: 30px;
+        display: block;
+      }
+      .service_benefits_detail {
+        width: 350px;
+        margin-bottom: 50px;
+        color: rgb(185, 189, 193);
+        position: relative;
+        top: -70px;
+        padding-left: 90px;
+      }
+
+      .service_benefits_detail h2:first-of-type{
+        width: 130%;
+      }
+      .service_benefits_detail p:first-of-type{
+        width: 120%;
+      }
+      .service_benefits_detail ul:first-of-type{
+        width: 120%;
+      }
+      .service_benefits_detail p:last-of-type{
+        width: 120%;
+      }
+
+      .service_benefits_detail h2{
+        width: 300px;
+      }
+
+      .quotation {
+        background: white;
+        width: auto;
+        position: relative;
+        height: 104vh;
+        /* top: -60px; */
+        margin-left: 0;
+        border-radius: 10px;
+        padding: 20px;
+      }
+
+      .row-footer{
+        left: 0;
+      }
+
+      .footer-section {
+        position: relative;
+        top: 490px;
+        height: 200vh;
+      }
+  
+      .footer-cta {
+        border-bottom: 1px solid #373636;
+        padding-left: 110px;
+        padding-right: 180px;
+      }
+      .single-cta{
+        margin-left: 20px;
+      }
+      .single-cta-mail{
+        margin-left: 20px;
+      }
+      .single-cta-mail i {
+        margin-top: 20px;
+      }
+      .cta-text{
+        /* margin-left: 20px; */
+        padding-left: 10px;
+        margin-bottom: 30px;
+      }
+      .cta-text span{
+        font-size: 10px;
+        display:block;
+        width: 120px;
+      }
+      .cta-text-email {
+        padding-left: 5px;
+        position: relative;
+        top: -20px;
+        display: inline-block;
+      }
+      
+      .cta-text-email h4 {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 2px;
+      }
+      .cta-text-email h6 {
+        color: #e0dede;
+        font-size: 10px;
+      }
+      .cta-text-email span {
+          color: #e0dede;
+          font-size: 15px;
+      }
+
+      .subscribe-form button{
+        top: -69px !important;
+        right: -347px !important;
+      }
+  
+      .copyright-area{
+        background: #202020;
+        padding: 25px 0;
+        width: 100%;
+        position: relative;
+        top: 860px;
+        opacity: 100;
+      }
+      .copyright-text p {
+        margin: 0;
+        font-size: 14px;
+        color: #878787;
+      }
+      .copyright-text p a{
+        color: #e25504;
+      }
+      .footer-widget{
+        margin-top: 30px;
+      }
+      .footer-widget-heading{
+        position: relative;
+        left: -30px;
+      }
+    }
+
+    @media (min-width:501px) and (max-width:600px){
+      .nav {
+        /* height: 10%; */
+        width: 100%;
+        background: white;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+      }
+  
+      .nav img:first-of-type {
+        left: 2%;
+        top: 30%;
+      }
+  
+      .nav>.nav-header {
+        display: inline;
+        position: relative;
+        top: 50%;
+        left: -5%;
+      }
+  
+      .nav>.nav-header>.nav-title {
+        display: inline-block;
+        font-size: 15px;
+        color: #0f1141;
+        font-weight: 700;
+        /* padding: 10px 10px 10px 10px; */
+        margin-left: 25%;
+        width: 80%;
+        position: relative;
+        top: -40%;
+      }
+  
+      .nav>.nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 10px;
+        top: 25px;
+      }
+  
+      .nav>.nav-btn>label {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        padding: 8px;
+      }
+  
+      .nav>.nav-btn>label:hover,
+      .nav #nav-check:checked~.nav-btn>label {
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+  
+      .nav>.nav-btn>label>span {
+        display: block;
+        width: 15px;
+        height: 5px;
+        border-top: 2px solid #eee;
+      }
+  
+      .nav>.nav-links {
+        position: absolute;
+        display: block;
+        width: 40%;
+        background-color: #333;
+        height: 0px;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 30px;
+        left: 20px;
+      }
+  
+      .nav>.nav-links>a {
+        display: block;
+        width: 50%;
+      }
+  
+      .nav>#nav-check:not(:checked)~.nav-links {
+        height: 0px;
+      }
+  
+      .nav>#nav-check:checked~.nav-links {
+        height: calc(50vh - 25px);
+        overflow-y: auto;
+      }
+
+      .hamb{
+        right: -35%;
+      }
+
+      .side-menu:checked ~ .hamb + .nav-links{
+        width: 440px;
+      }
+
+      .side-menu:checked ~ .hamb + .nav-links > a > .dropdown-content{
+        /* opacity: 1; */
+        top: 75px;
+        left: 150px;
+      }
+
+      .header_services{
+        position: relative;
+        top: -100px;
+        height: 75px;
+        background: #0f1141;
+        width: 100%;
+        background-image: url('https://garantiwebdesign.com/wordpress/industry/wp-content/uploads/2022/10/header-industry-4.jpg');
+        /* text-align: center; */
+      }
+      .header_services h1{
+        color: white;
+        position: relative;
+        top: 20%;
+        font-size: 25px;
+        margin-left: 50px;
+        margin-top: 100px;
+        margin-bottom: 50px;
+      }
+
+      .industry_details{
+        /* display: inline; */
+        background: #fff
+      }
+
+      .industry_details_img{
+        display: block;
+        width: 89%;
+
+      }
+
+      .industry_details_img img {
+        height: 400px;
+        min-width: 0;
+        margin-bottom: 30px;
+      }
+
+      .industry_details_img .img1{
+        width: 112%;
+        padding: 10px;
+      }
+
+      .industry_details_img .img2{
+        width: 10%;
+        top: 20px;
+        height: 20rem;
+        padding: 10px;
+        left: 20px;
+        padding-right: 20px;
+      }
+
+      .industry_details_img .img3{
+        width: 10%;
+        top: -10px;
+        height: 20rem;
+        padding: 10px;
+        left: 20px;
+        padding-right: 30px;
+      }
+
+      .industry_details_img p{
+        top: -40px;
+        min-width: 0;
+        width: 400px;
+        font-size: 15px;
+        right: 10px;
+        margin-top: 50px;
+        text-align: center;
+      }
+
+      .our_partners_header{
+        font-size: 25px;
+        position: relative;
+        top: 650px;
+      }
+      
+      .our_partners_header_msg{
+        text-align: center;
+        position: relative;
+        top: 665px;
+        width: 90%;
+        margin-left: 5%;
+      }
+      .slider {
+        top: 650px;
+      }
+      .service_benefits{
+        position: relative;
+        top: 550px;
+        height: 200vh;
+        padding-left: 0;
+        margin-bottom: 30px;
+        display: block;
+      }
+      .service_benefits_detail {
+        width: 350px;
+        margin-bottom: 50px;
+        color: rgb(185, 189, 193);
+        position: relative;
+        top: -70px;
+        padding-left: 90px;
+      }
+
+      .service_benefits_detail h2:first-of-type{
+        width: 130%;
+      }
+      .service_benefits_detail p:first-of-type{
+        width: 120%;
+      }
+      .service_benefits_detail ul:first-of-type{
+        width: 120%;
+      }
+      .service_benefits_detail p:last-of-type{
+        width: 120%;
+      }
+
+      .service_benefits_detail h2{
+        width: 300px;
+      }
+
+      .quotation {
+        background: white;
+        width: auto;
+        position: relative;
+        height: 104vh;
+        /* top: -60px; */
+        margin-left: 0;
+        border-radius: 10px;
+        padding: 20px;
+      }
+
+      .row-footer{
+        left: 0;
+      }
+
+      .footer-section {
+        position: relative;
+        top: 490px;
+        height: 200vh;
+      }
+  
+      .footer-cta {
+        border-bottom: 1px solid #373636;
+        padding-left: 110px;
+        padding-right: 180px;
+      }
+      .single-cta{
+        margin-left: 20px;
+      }
+      .single-cta-mail{
+        margin-left: 20px;
+      }
+      .single-cta-mail i {
+        margin-top: 20px;
+      }
+      .cta-text{
+        /* margin-left: 20px; */
+        padding-left: 40px;
+        margin-bottom: 30px;
+      }
+      .cta-text span{
+        font-size: 10px;
+        display:block;
+        width: 120px;
+      }
+      .cta-text-email {
+        padding-left: 30px;
+        position: relative;
+        top: -20px;
+        display: inline-block;
+      }
+      
+      .cta-text-email h4 {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 2px;
+      }
+      .cta-text-email h6 {
+        color: #e0dede;
+        font-size: 10px;
+      }
+      .cta-text-email span {
+          color: #e0dede;
+          font-size: 15px;
+      }
+
+      .subscribe-form button{
+        top: -69px !important;
+        right: -390px !important;
+      }
+  
+      .copyright-area{
+        background: #202020;
+        padding: 25px 0;
+        width: 100%;
+        position: relative;
+        top: 860px;
+        opacity: 100;
+      }
+      .copyright-text p {
+        margin: 0;
+        font-size: 14px;
+        color: #878787;
+      }
+      .copyright-text p a{
+        color: #e25504;
+      }
+      .footer-widget{
+        margin-top: 30px;
+      }
+      .footer-widget-heading{
+        position: relative;
+        left: -30px;
+      }
+    }
+
+    @media (min-width:601px) and (max-width:700px){
+      .nav {
+        /* height: 10%; */
+        width: 100%;
+        background: white;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+      }
+  
+      .nav img:first-of-type {
+        left: 2%;
+        top: 30%;
+      }
+  
+      .nav>.nav-header {
+        display: inline;
+        position: relative;
+        top: 50%;
+        left: -5%;
+      }
+  
+      .nav>.nav-header>.nav-title {
+        display: inline-block;
+        font-size: 15px;
+        color: #0f1141;
+        font-weight: 700;
+        /* padding: 10px 10px 10px 10px; */
+        margin-left: 25%;
+        width: 80%;
+        position: relative;
+        top: -40%;
+      }
+  
+      .nav>.nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 10px;
+        top: 25px;
+      }
+  
+      .nav>.nav-btn>label {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        padding: 8px;
+      }
+  
+      .nav>.nav-btn>label:hover,
+      .nav #nav-check:checked~.nav-btn>label {
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+  
+      .nav>.nav-btn>label>span {
+        display: block;
+        width: 15px;
+        height: 5px;
+        border-top: 2px solid #eee;
+      }
+  
+      .nav>.nav-links {
+        position: absolute;
+        display: block;
+        width: 40%;
+        background-color: #333;
+        height: 0px;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 30px;
+        left: 20px;
+      }
+  
+      .nav>.nav-links>a {
+        display: block;
+        width: 50%;
+      }
+  
+      .nav>#nav-check:not(:checked)~.nav-links {
+        height: 0px;
+      }
+  
+      .nav>#nav-check:checked~.nav-links {
+        height: calc(50vh - 25px);
+        overflow-y: auto;
+      }
+
+      .hamb{
+        right: -45%;
+      }
+
+      .side-menu:checked ~ .hamb + .nav-links{
+        width: 440px;
+      }
+
+      .side-menu:checked ~ .hamb + .nav-links > a > .dropdown-content{
+        /* opacity: 1; */
+        top: 75px;
+        left: 150px;
+      }
+
+      .header_services{
+        position: relative;
+        top: -100px;
+        height: 75px;
+        background: #0f1141;
+        width: 100%;
+        background-image: url('https://garantiwebdesign.com/wordpress/industry/wp-content/uploads/2022/10/header-industry-4.jpg');
+        /* text-align: center; */
+      }
+      .header_services h1{
+        color: white;
+        position: relative;
+        top: 20%;
+        font-size: 25px;
+        margin-left: 50px;
+        margin-top: 100px;
+        margin-bottom: 50px;
+      }
+
+      .industry_details{
+        /* display: inline; */
+        background: #fff
+      }
+
+      .industry_details_img{
+        display: block;
+        width: 89%;
+
+      }
+
+      .industry_details_img img {
+        height: 400px;
+        min-width: 0;
+        margin-bottom: 30px;
+      }
+
+      .industry_details_img .img1{
+        width: 112%;
+        padding: 10px;
+      }
+
+      .industry_details_img .img2{
+        width: 112%;
+        top: 20px;
+        height: 25rem;
+        padding: 10px;
+        left: -40px;
+        /* padding-right: 20px; */
+      }
+
+      .industry_details_img .img3{
+        width: 112%;
+        top: -10px;
+        height: 25rem;
+        padding: 10px;
+        left: -40px;
+        /* padding-right: 30px; */
+      }
+
+      .industry_details_img p{
+        top: -40px;
+        min-width: 0;
+        width: 90%;
+        font-size: 18px;
+        right: 10px;
+        margin-top: 50px;
+        text-align: center;
+      }
+
+      .our_partners_header{
+        font-size: 30px;
+        position: relative;
+        top: 1140px;
+      }
+      
+      .our_partners_header_msg{
+        text-align: center;
+        position: relative;
+        top: 1140px;
+        width: 90%;
+        margin-left: 5%;
+      }
+      .slider {
+        top: 1100px;
+      }
+      .service_benefits{
+        position: relative;
+        top: 1000px;
+        height: 200vh;
+        padding-left: 0;
+        margin-bottom: 30px;
+        display: block;
+      }
+      .service_benefits_detail {
+        width: 70%;
+        margin-bottom: 50px;
+        color: rgb(185, 189, 193);
+        position: relative;
+        top: -70px;
+        padding-left: 90px;
+      }
+
+      .service_benefits_detail h2:first-of-type{
+        width: 130%;
+      }
+      .service_benefits_detail p:first-of-type{
+        width: 120%;
+      }
+      .service_benefits_detail ul:first-of-type{
+        width: 120%;
+      }
+      .service_benefits_detail p:last-of-type{
+        width: 120%;
+      }
+
+      .service_benefits_detail h2{
+        width: 300px;
+      }
+
+      .quotation {
+        background: white;
+        width: auto;
+        position: relative;
+        height: 104vh;
+        /* top: -60px; */
+        margin-left: 0;
+        border-radius: 10px;
+        padding: 20px;
+      }
+
+      .row-footer{
+        left: 0;
+      }
+
+      .footer-section {
+        position: relative;
+        top: 800px;
+        height: 175vh;
+      }
+  
+      .footer-cta {
+        border-bottom: 1px solid #373636;
+        padding-left: 110px;
+        padding-right: 180px;
+      }
+      .single-cta{
+        margin-left: 20px;
+      }
+      .single-cta-mail{
+        margin-left: 20px;
+      }
+      .single-cta-mail i {
+        margin-top: 20px;
+      }
+      .cta-text{
+        /* margin-left: 20px; */
+        padding-left: 40px;
+        margin-bottom: 30px;
+      }
+      .cta-text span{
+        font-size: 10px;
+        display:block;
+        width: 120px;
+      }
+      .cta-text-email {
+        padding-left: 30px;
+        position: relative;
+        top: -20px;
+        display: inline-block;
+      }
+      
+      .cta-text-email h4 {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 2px;
+      }
+      .cta-text-email h6 {
+        color: #e0dede;
+        font-size: 10px;
+      }
+      .cta-text-email span {
+          color: #e0dede;
+          font-size: 15px;
+      }
+
+      .subscribe-form button{
+        position: absolute !important;
+        top: 5px !important;
+        right: 0 !important;
+      }
+  
+      .copyright-area{
+        background: #202020;
+        padding: 25px 0;
+        width: 100%;
+        position: relative;
+        top: 770px;
+        opacity: 100;
+      }
+      .copyright-text p {
+        margin: 0;
+        font-size: 14px;
+        color: #878787;
+      }
+      .copyright-text p a{
+        color: #e25504;
+      }
+      .footer-widget{
+        margin-top: 30px;
+      }
+      .footer-widget-heading{
+        position: relative;
+        left: -30px;
+      }
+    }
+
+    @media (min-width:1301px) and ( max-width:1400px) {
+
+      .hamb{
+        /* right: -25%; */
+        display: none;
+      }
+  
+      /* .nav > .nav-links{
+        margin-left: auto;
+        top: -85px!Important;
+        position: relative!Important;
+      } */
+  
+      .nav img:first-of-type{
+        height: 80px;
+        width: 6%;
+        top: 0;
+        position: relative;
+        left: 0;
+      }
+  
+      .nav > .nav-header > .nav-title{
+        font-size: 26px;
+        font-weight: 800;
+        margin-left: 0;
+        width: 95%;
+        margin-top: 0;
+        padding: 10px!Important;
+        position: relative;
+        top: -5px;
+        text-align: left;
+      }
+  
+      .nav > .nav-links{
+        margin-left: auto;
+        margin-top: 12px;
+        font-size: 25px;
+      }
+  
+      .side-menu:checked ~ .hamb + .container_new{
+        width: 110%;
+        border-radius: 5px;
+        top: 80px;
+      }
+  
+      .side-menu:checked ~ .hamb + .container_new > a{
+        width: 230px;
+      }
+  
+      .side-menu:checked ~ .hamb + .container_new > a > .dropdown-content{
+        left: 280px;
+      }
+  
+      .side-menu:checked ~ .hamb + .container_new > a > .dropdown-content-industries{
+        left: 280px;
+      }
+  
+      .dropdown-content{
+        right: -146px;
+      }
+  
+      .dropdown-content-industries{
+        right: -128px;
+      }
+
+      .header_services h1{
+        margin-left: 0;
+        text-align: center;
+        top: 25%;
+      }
+
+      .industry_details{
+        height: 107vh;
+      }
+
+      .industry_details_img .img1{
+        height: 70vh;
+        min-width: 700px;
+        max-width: 700px;
+      }
+
+      .industry_details_img .img2{
+        position: relative;
+        min-width: 350px;
+        width: 350px;
+        height: 40vh;
+        top: 0;
+        left: 0;
+      }
+
+      .industry_details_img .img3{
+        top: 0;
+        position: relative;
+        left: 0;
+        min-width: 350px;
+        width: 350px;
+        height: 40vh;
+      }
+  
+      .quotation{
+        margin-left: 50px;
+      }
+  
+      .quotation h1{
+        font-size: 30px;
+      }
+  
+      input[type=text],
+      input[type=email],
+      select,
+      textarea {
+        padding: 6px;
+        margin-top: 6px;
+        margin-bottom: 6px;
+      }
+  
+      .details{
+        height: 80px!Important;
+      }
+  
+      .footer-section {
+        height: 80vh;
+      }
+  
+      .single-cta i{
+        margin-left: 0;
+        top: -10px;
+      }
+  
+      .footer-cta {
+        padding-left: 0;
+        padding-right: 80px;
+      }
+  
+      .subscribe-form button{
+        top: -60px!Important;
+        right: -340px!Important;
+      }
+  
+      .copyright-area{
+        top: 110px;
+        position: relative;
+      }
+  
+    }
+
+  /* RESPONSIVE CSS END */

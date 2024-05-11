@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industry-Details</title>
+</head>
+<body>
+  <div class="nav" id="nav">
+    <!-- <input type="checkbox" id="nav-check"> -->
+    <img src="../../../assets/Foundation_logo_nobg.png">
+    <div class="nav-header">
+      <div class="nav-title">
+        FOUNDATION CONSULTANTS
+      </div>
+    </div>
+    <!-- <div class="nav-btn">
+      <label for="nav-check">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </div> -->
+
+    <!-- Hamburger icon -->
+    <input class="side-menu" type="checkbox" id="side-menu"/>
+    <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+    
+    <div class="nav-links">
+      <a href="/home">Home</a>
+      <a alt="SERVICES" class="dropdown" type="checkbox">
+        <!-- <button class="dropbtn">Services</button> -->Services
+        <div class="dropdown-content">
+          <li *ngFor="let service of services" (click)="navigate(service.subject);">{{service.subject}}</li>
+        </div>
+      </a>
+      <a alt="INDUSTRIES" class="dropdown" type="checkbox">
+        <!-- <button class="dropbtn-industries">Industries</button> -->Industries
+        <div class="dropdown-content-industries">
+            <li *ngFor="let industry of industries" (click)="navigate_industry(industry.subject);">{{industry.subject}}</li>
+        </div>
+      </a>
+      <!-- <a href="/aboutUs">About Us</a> -->
+      <!-- <a href="https://jsfiddle.net/user/jo_Geek/">Career</a> -->
+      <a href="/aboutUs" alt="ABOUT US">About us</a>
+      <a href="/contactUs" alt="CONTACT US">Contact Us</a>
+    </div>
+    
+    <!-- Hamburger icon -->
+    <!-- <input class="side-menu" type="checkbox" id="side-menu"/>
+    <label class="hamb" for="side-menu"><span class="hamb-line"></span></label> -->
+  </div>
+    <div class="header_services">
+      <h1 class="Outfit">{{subject}}</h1>
+    </div>
+    <div class="industry_details">
+      <!-- <div class="industry_details_forms">
+        
+      </div> -->
+      <div class="industry_details_img">
+        <img *ngIf="subject == 'Power'" src="../../../assets/Power_new_2.jpg"
+          alt="Power" class="img1">
+        <div class="img_group" style="display: flex;">
+          <img *ngIf="subject == 'Power'" src="../../../assets/OIL & Natural Gas_new1.jpg"
+          alt="Power" class="img2">
+          <img *ngIf="subject == 'Power'" src="../../../assets/OIL & Natural Gas_new2.jpg"
+          alt="Power" class="img3"> 
+        </div>
+        <img *ngIf="subject == 'Oil & Natural Gas'" src="../../../assets/OIL & Natural Gas.jpg"
+          alt="Oil & Natural Gas" class="img1">
+        <div class="img_group" style="display: flex;">
+          <img *ngIf="subject == 'Oil & Natural Gas'" src="../../../assets/OIL & Natural Gas_new1.jpg"
+          alt="Oil & Natural Gas" class="img2">
+          <img *ngIf="subject == 'Oil & Natural Gas'" src="../../../assets/OIL & Natural Gas_new2.jpg"
+          alt="Oil & Natural Gas" class="img3">
+        </div>
+        <img *ngIf="subject == 'Mining & Minerals'" src="../../../assets/OIL & Natural Gas.jpg"
+          alt="Mining & Minerals" class="img1">
+        <div class="img_group" style="display: flex;">
+          <img *ngIf="subject == 'Mining & Minerals'" src="../../../assets/OIL & Natural Gas_new1.jpg"
+            alt="Mining & Minerals" class="img2">
+          <img *ngIf="subject == 'Mining & Minerals'" src="../../../assets/OIL & Natural Gas_new2.jpg"
+            alt="Mining & Minerals" class="img3">
+        </div>
+        <img *ngIf="subject == 'Railways'" src="../../../assets/Railways_new.jpg"
+          alt="Railways" class="img1">
+        <div class="img_group" style="display: flex;">
+          <img *ngIf="subject == 'Railways'" src="../../../assets/OIL & Natural Gas_new1.jpg"
+            alt="Railways" class="img2">
+          <img *ngIf="subject == 'Railways'" src="../../../assets/OIL & Natural Gas_new2.jpg"
+          alt="Railways" class="img3">
+        </div>  
+        <img *ngIf="subject == 'Roads and Highways'" src="../../../assets/Highways.jpg"
+          alt="Roads and Highways" class="img1">
+        <div class="img_group" style="display: flex;">
+          <img *ngIf="subject == 'Roads and Highways'" src="../../../assets/OIL & Natural Gas_new1.jpg"
+            alt="Roads and Highways" class="img2">
+          <img *ngIf="subject == 'Roads and Highways'" src="../../../assets/OIL & Natural Gas_new2.jpg"
+            alt="Roads and Highways" class="img3">
+        </div>
+        <img *ngIf="subject == 'Construction & Infra'" src="../../../assets/Construction.jpg"
+          alt="Construction & Infra" class="img1">
+        <div class="img_group" style="display: flex;">
+          <img *ngIf="subject == 'Construction & Infra'" src="../../../assets/OIL & Natural Gas_new1.jpg"
+            alt="Construction & Infra" class="img2">
+          <img *ngIf="subject == 'Construction & Infra'" src="../../../assets/OIL & Natural Gas_new2.jpg"
+            alt="Construction & Infra" class="img3">
+        </div>
+        <img *ngIf="subject == 'Telecom'" src="../../../assets/Telecom_new.jpg"
+          alt="Telecom" class="img1">
+        <div class="img_group" style="display: flex;">
+          <img *ngIf="subject == 'Telecom'" src="../../../assets/OIL & Natural Gas_new1.jpg"
+            alt="Telecom" class="img2">
+          <img *ngIf="subject == 'Telecom'" src="../../../assets/OIL & Natural Gas_new2.jpg"
+            alt="Telecom" class="img3">
+        </div>  
+        <img *ngIf="subject == 'Automobiles'" src="../../../assets/Construction.jpg"
+          alt="Automobiles" class="img1">
+        <div class="img_group" style="display: flex;">
+          <img *ngIf="subject == 'Automobiles'" src="../../../assets/OIL & Natural Gas_new1.jpg"
+            alt="Automobiles" class="img2">
+          <img *ngIf="subject == 'Automobiles'" src="../../../assets/OIL & Natural Gas_new2.jpg"
+            alt="Automobiles" class="img3">
+        </div>
+        <img *ngIf="subject == 'Conveyor & Ropeways'" src="../../../assets/Ropeway_new.jpg"
+          alt="Conveyor & Ropeways" class="img1">
+        <div class="img_group" style="display: flex;">
+          <img *ngIf="subject == 'Conveyor & Ropeways'" src="../../../assets/OIL & Natural Gas_new1.jpg"
+            alt="Conveyor & Ropeways" class="img2">
+          <img *ngIf="subject == 'Conveyor & Ropeways'" src="../../../assets/OIL & Natural Gas_new2.jpg"
+            alt="Conveyor & Ropeways" class="img3">
+        </div>
+        <img *ngIf="subject == 'Renewable Resources'" src="../../../assets/Renewable_new.jpg"
+          alt="Renewable Resources" class="img1">
+        <div class="img_group" style="display: flex;">
+          <img *ngIf="subject == 'Renewable Resources'" src="../../../assets/OIL & Natural Gas_new1.jpg"
+            alt="Renewable Resources" class="img2">
+          <img *ngIf="subject == 'Renewable Resources'" src="../../../assets/OIL & Natural Gas_new2.jpg"
+            alt="Renewable Resources" class="img3">
+        </div>  
+        <img *ngIf="subject == 'Bridges'" src="../../../assets/Renewable_new.jpg"
+          alt="Bridges" class="img1">
+        <div class="img_group" style="display: flex;">
+          <img *ngIf="subject == 'Bridges'" src="../../../assets/OIL & Natural Gas_new1.jpg"
+            alt="Bridges" class="img2">
+          <img *ngIf="subject == 'Bridges'" src="../../../assets/OIL & Natural Gas_new2.jpg"
+            alt="Bridges" class="img3">
+        </div>
+        <!-- <p>{{subject_details}}</p> -->
+      </div>
+      <div class="industry_companies" style="display: block; margin-top: 30px;">
+        <p style="font-size: 30px;  color: #0f1141; font-weight: 600;">{{subject_details}}</p>
+        <p *ngFor="let company of subject_details_arr" style="margin-left: 40px; font-weight: 700; color: #0f1141; padding: 20px 0;">{{ company }}</p>
+      </div>
+    </div>
+
+    <!-- OUR PARTNERS START -->
+    <h2 class="our_partners_header" data-aos="zoom-in">OUR PARTNERS</h2>
+    <h4 class="our_partners_header_msg">Partnered with 6 clients over the span of 50 years</h4>
+    <div class="slider">
+      <div class="slide-track">
+        <div class="slide">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="" />
+        </div>
+      </div>
+    </div>
+    <!-- OUR PARTNERS END -->
+
+    <!-- SERVICE BENEFITS START -->
+
+    <div class="service_benefits">
+      
+        <div class="service_benefits_detail" data-aos="fade-right">
+          <h5 style="color: white; text-align: left;">OUR SERVICE BENEFITS</h5>
+          <h2>EXPERIENCE INNOVATION THE PROFESSIONAL WAY</h2>
+          <p>Our research phase is very important. We do our best to plan every possible outcome, which would affect the budget
+            and time of finishing the project:
+          </p>
+          <ul style="margin-left: 30px;">
+            <li>Based on your project, get only what's needed</li>
+            <li>Cost effective, to secure construction process</li>
+            <li>Premium quality. We always get the best people</li>
+          </ul>
+          <p style="margin-top: 20px;">Through this experience Warmhouse has acquired a high level of expertise in the design and realisation of high-profile
+          and luxury schemes.
+          </p>
+        </div>
+        <div class="quotation">
+          <h1>Leave Your Number</h1>
+          <h5>Let's Call You Back</h5>
+          <form action="/action_page.php">
+              <label for="name">Name : </label>
+              <input type="text" id="name" name="name" placeholder="Your name..">
+  
+              <label for="name">Company Name : </label>
+              <input type="text" id="name" name="name" placeholder="Company name..">
+            
+              <label for="email">Email : </label>
+              <input type="email" id="email" name="email" placeholder="Ex:- abc@gmail.com">
+            
+              <label for="ph_no">Phone No : </label>
+              <input type="text" id="ph_no" name="ph_no" placeholder="Ex:- +91-9087654321">
+  
+              <label for="name">WHAT DO YOU HAVE IN MIND ? </label>
+              <input type="text" class = "details" id="name" name="name" placeholder="Write Something.." style="height: 120px;">
+            
+              <input type="submit" value="Submit">
+            </form>
+        </div>
+      </div>
+
+    <!-- SERVICE BENEFITS END -->
+
+    <!-- NEW FOOTER START -->
+
+  <footer class="footer-section">
+    <div class="container_new" style="top: -30px; height: 50vh;">
+        <div class="footer-cta pt-5 pb-5">
+            <div class="row">
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="fas fa-map-marker-alt shake" (click)="openMap()"></i>
+                        <div class="cta-text">
+                            <h4>Find us</h4>
+                            <span>91/33 Tollygunge Road. Kolkata - 700033</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="fas fa-phone"></i>
+                        <div class="cta-text">
+                            <h4>Call us</h4>
+                            <span>98765432100</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta-mail">
+                        <i class="far fa-envelope-open"></i>
+                        <div class="cta-text-email">
+                            <h4>Mail us</h4>
+                            <h6>info@foundationconsultants.in</h6>
+                            <h6 style="margin-top: 5px; color: #e0dede;">geotechnic_soil@yahoo.com</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-content pt-5 pb-5">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 mb-50">
+                    <div class="footer-widget">
+                        <!-- <div class="footer-logo">
+                            <a href="index.html"><img src="https://i.ibb.co/QDy827D/ak-logo.png" class="img-fluid" alt="logo"></a>
+                        </div> -->
+                        <div class="footer-text">
+                            <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing
+                            elit,Lorem ipsum dolor sit amet.</p>
+                        </div>
+                        <div class="footer-social-icon">
+                            <span>Follow us</span>
+                            <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
+                            <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                            <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3>Useful Links</h3>
+                        </div>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a (click)="goToPartNextPage('industries-new')">Industries</a></li>
+                            <!-- <li><a href="#">services</a></li> -->
+                            <!-- <li><a href="#">portfolio</a></li> -->
+                            <!-- <li><a href="#">Contact</a></li> -->
+                            <li><a href="/aboutUs">About us</a></li>
+                            <li><a (click)="goToPartNextPage('services')">Our Services</a></li>
+                            <li><a (click)="goToPartAboutPage('expertTeam')">Expert Team</a></li>
+                            <li><a href="/contactUs">Contact us</a></li>
+                            <!-- <li><a href="#">Latest News</a></li> -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading-new">
+                            <h3>Subscribe</h3>
+                        </div>
+                        <div class="footer-text-new mb-25">
+                            <p>Don't miss to subscribe to our new feeds, kindly fill the form below.</p>
+                        </div>
+                        <div class="subscribe-form">
+                            <form action="#">
+                                <input type="text" placeholder="Email Address">
+                                <button style="top: -70px; right: -463px; position: relative;"><i class="fab fa-telegram-plane"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-area">
+        <!-- <div class="container_new"> -->
+            <div class="row_footer">
+                <!-- <div class="col-xl-6 col-lg-6 text-center text-lg-left"> -->
+                    <div class="copyright-text">
+                        <p>Copyright &copy; 2023, All Right Reserved <a href="#">FOUNDATION CONSULTANTS</a></p>
+                    </div>
+                <!-- </div> -->
+                <!-- <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Policy</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div> -->
+            </div>
+    </div>
+    <!-- </div> -->
+</footer>
+</body>
+</html>
