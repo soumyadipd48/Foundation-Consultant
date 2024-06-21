@@ -148,9 +148,9 @@
         </div>
         <!-- <p>{{subject_details}}</p> -->
       </div>
-      <div class="industry_companies" style="display: block; margin-top: 30px;">
-        <p style="font-size: 30px;  color: #0f1141; font-weight: 600;">{{subject_details}}</p>
-        <p *ngFor="let company of subject_details_arr" style="margin-left: 40px; font-weight: 700; color: #0f1141; padding: 20px 0;">{{ company }}</p>
+      <div class="industry_companies">
+        <p class="industry_companies_p">{{subject_details}}</p>
+        <p class="industry_companies_p_n" *ngFor="let company of subject_details_arr">{{ company }}</p>
       </div>
     </div>
 
@@ -160,43 +160,43 @@
     <div class="slider">
       <div class="slide-track">
         <div class="slide">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="" />
+          <img src="../../../assets/Bajaj.jpg" height="150" width="300" alt="" />
         </div>
         <div class="slide">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="" />
+          <img src="../../../assets/bhel_logo.png" height="150" width="300" alt="" style="margin-left: 50px;"/>
         </div>
         <div class="slide">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="" />
+          <img src="../../../assets/CRSPL.png" height="150" width="250" alt="" style="margin-left: 100px;"/>
         </div>
         <div class="slide">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="" />
+          <img src="../../../assets/HDFC.png" height="150" width="300" alt="" style="margin-left: 50px; width: 150px;"/>
         </div>
         <div class="slide">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
+          <img src="../../../assets/KMDA.png" height="150" width="300" alt="" style="width: 180px;"/>
         </div>
         <div class="slide">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="" />
+          <img src="../../../assets/KPTL.png" height="150" width="300" alt="" style="margin-left: 50px;"/>
+        </div>
+        <div class="slide" style="width: 350px;">
+          <img src="../../../assets/linxon.png" height="150" width="300" alt="" style="margin-left: 50px;"/>
         </div>
         <div class="slide">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="100" width="250" alt="" />
+          <img src="../../../assets/Lumino.png" height="150" width="300" alt="" />
         </div>
         <div class="slide">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="" />
+          <img src="../../../assets/NTPC.png" height="150" width="300" alt="" />
         </div>
         <div class="slide">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="" />
+          <img src="../../../assets/RVNL_N.png" height="150" width="300" alt="" />
         </div>
         <div class="slide">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="" />
+          <img src="../../../assets/SBI.png" height="150" width="300" alt="" />
         </div>
         <div class="slide">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="" />
+          <img src="../../../assets/SIEMENS.png" height="150" width="300" alt="" />
         </div>
         <div class="slide">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
-        </div>
-        <div class="slide">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="" />
+          <img src="../../../assets/WBSETCL.png" height="150" width="300" alt="" />
         </div>
       </div>
     </div>
@@ -224,23 +224,26 @@
         <div class="quotation">
           <h1>Leave Your Number</h1>
           <h5>Let's Call You Back</h5>
-          <form action="/action_page.php">
+          <form action="https://api.web3forms.com/submit" method="POST">
+
+              <input type="hidden" name="access_key" value="0198704c-cd55-4639-8f4d-b5e8e3a98b1b">
+
               <label for="name">Name : </label>
-              <input type="text" id="name" name="name" placeholder="Your name..">
+              <input type="text" id="name" name="Name" placeholder="Your name..">
   
               <label for="name">Company Name : </label>
-              <input type="text" id="name" name="name" placeholder="Company name..">
+              <input type="text" id="company name" name="Company Name" placeholder="Company name..">
             
               <label for="email">Email : </label>
-              <input type="email" id="email" name="email" placeholder="Ex:- abc@gmail.com">
+              <input type="email" id="email" name="Email" placeholder="Ex:- abc@gmail.com">
             
               <label for="ph_no">Phone No : </label>
-              <input type="text" id="ph_no" name="ph_no" placeholder="Ex:- +91-9087654321">
+              <input type="text" id="phone no" name="Phone No" placeholder="Ex:- +91-9087654321">
   
               <label for="name">WHAT DO YOU HAVE IN MIND ? </label>
-              <input type="text" class = "details" id="name" name="name" placeholder="Write Something.." style="height: 120px;">
+              <input type="text" class = "details" id="details" name="Details" placeholder="Write Something.." style="height: 120px;">
             
-              <input type="submit" value="Submit">
+              <input type="submit" value="Submit" class="submit-btn">
             </form>
         </div>
       </div>
@@ -250,7 +253,7 @@
     <!-- NEW FOOTER START -->
 
   <footer class="footer-section">
-    <div class="container_new" style="top: -30px; height: 50vh;">
+    <div class="container_new" style="height: 400px;">
         <div class="footer-cta pt-5 pb-5">
             <div class="row">
                 <div class="col-xl-4 col-md-4 mb-30">
@@ -258,7 +261,7 @@
                         <i class="fas fa-map-marker-alt shake" (click)="openMap()"></i>
                         <div class="cta-text">
                             <h4>Find us</h4>
-                            <span>91/33 Tollygunge Road. Kolkata - 700033</span>
+                            <span>91/33 Tollygunge Road, Kolkata - 700033</span>
                         </div>
                     </div>
                 </div>
@@ -276,8 +279,8 @@
                         <i class="far fa-envelope-open"></i>
                         <div class="cta-text-email">
                             <h4>Mail us</h4>
-                            <h6>info@foundationconsultants.in</h6>
-                            <h6 style="margin-top: 5px; color: #e0dede;">geotechnic_soil@yahoo.com</h6>
+                            <h6><a class="mailto" href="mailto:soumyadipd588@gmail.com"></a>info@foundationconsultants.in</h6>
+                            <h6 style="margin-top: 5px; color: #e0dede;"><a class="mailto" href="mailto:soumyadipd588@gmail.com"></a>geotechnic_soil@yahoo.com</h6>
                         </div>
                     </div>
                 </div>
@@ -330,9 +333,10 @@
                             <p>Don't miss to subscribe to our new feeds, kindly fill the form below.</p>
                         </div>
                         <div class="subscribe-form">
-                            <form action="#">
-                                <input type="text" placeholder="Email Address">
-                                <button style="top: -70px; right: -463px; position: relative;"><i class="fab fa-telegram-plane"></i></button>
+                            <form action="https://api.web3forms.com/submit" method="POST">
+                                <input type="hidden" name="access_key" value="0198704c-cd55-4639-8f4d-b5e8e3a98b1b">
+                                <input type="text" name="Subscriber Email Address" placeholder="Email Address">
+                                <button><i class="fab fa-telegram-plane"></i></button>
                             </form>
                         </div>
                     </div>

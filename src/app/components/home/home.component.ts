@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import AOS from "aos";
 
 @Component({
   selector: 'app-home',
@@ -317,6 +318,32 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
+    AOS.init({
+      duration: 1200,
+      offset: 100,
+    });
+    if(window.innerWidth<=400)
+    {
+      AOS.init({
+        duration: 1200,
+        offset: -250,
+      });
+    }
+    if(window.innerWidth<=500)
+    {
+      AOS.init({
+        duration: 1200,
+        offset: -250,
+      });
+    }
+    if(window.innerWidth<=600)
+    {
+      AOS.init({
+        duration: 1200,
+        offset: -250,
+      });
+    }
+
     // window.addEventListener('scroll', function() {
     //   navbarScroll();
     //  });
@@ -365,7 +392,7 @@ export class HomeComponent implements OnInit {
   }
 
   goToPartNextPage(fragment:any){
-    this.router.navigateByUrl('/aboutUs#'+fragment)
+    this.router.navigateByUrl('/home#'+fragment)
   }
 
   goToPartAboutPage(fragment:any){

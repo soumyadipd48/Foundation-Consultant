@@ -16,70 +16,65 @@ html{
 }
 
 /* NAVBAR CSS START */
-  .nav {
-    height: 80px;
-    width: 100%;
-    background: white;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
-  }
+.nav {
+  height: 80px;
+  width: 100%;
+  background: white;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  /* border-radius: 5px; */
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+}
 
-  .nav img:first-of-type{
-    height: 40px;
-    width: 40px;
-    top: 20px;
-    position: relative;
-    left: 135px;
-  }
+.nav img:first-of-type{
+  height: 80px;
+  width: 80px;
+  /* top: 20px;
+  position: relative;
+  left: 135px; */
+}
   
   .nav > .nav-header {
     display: inline;
   }
   
-  .nav > .nav-header > .nav-title {
+  .nav>.nav-header>.nav-title {
     display: inline-block;
-    font-size: 35px;
-    color: #0f1141;
-    font-weight: 700;
-    /* padding: 10px 10px 10px 10px; */
-    margin-left: 140px;
-    width: 80%;
-    margin-top: 15px;
+    font-size: 22px;
+    color: rgb(17, 17, 78);
+    font-weight: 800;
+    padding: 10px 10px 10px 10px;
+    /* margin-left: 140px; */
+    width: 95%;
+    top: -5px;
+    position: relative;
+    text-align: left;
   }
   
   .nav > .nav-btn {
     display: none;
   }
   
-  .nav > .nav-links {
+  .nav>.nav-links {
     display: flex;
-    margin-left: 200px;
-    font-size: 20px;
-    margin-top: 20px;
-    font-weight: 600;
+    margin-left: auto;
+    font-size: 25px;
+    margin-top: 12px;
+    /* font-weight: 600; */
   }
   
   .nav > .nav-links > a {
     display: flex;
     padding: 5px;
-    padding-top: 10px;
-    /* text-decoration: none; */
+    text-decoration: none;
     color: #0f1141;
-    /* margin: 3px;
-    margin-right: 15px; */
-    margin: 0 10px;
-    font-weight: 600;
-    /* justify-content: space-between; */
+    margin: 3px;
+    margin-right: 15px;
+    font-weight: 550;
+    justify-content: space-between;
     /* padding-top: 11px; */
-    font: 25px;
-    font-family: Outfit;
-    z-index: 0;
-    cursor: pointer;
-    border-radius: 5px;
   }
   
   .nav > .nav-links > a:hover {
@@ -285,7 +280,7 @@ html{
   position: absolute;
   background-color: #f9f9f9;
   /* min-width: 20px; */
-  right: -160px;
+  right: -146px;
   top: 35px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -300,7 +295,7 @@ html{
   position: absolute;
   background-color: #f9f9f9;
   /* min-width: 20px; */
-  right: -145px;
+  right: -128px;
   top: 33px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -1000,6 +995,7 @@ html{
 
 body {
   margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   animation: fadeInAnimation ease 3s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
@@ -1214,7 +1210,7 @@ ul {
   .footer-section {
   background: #0f1141;
   position: relative;
-  height: 60vh;
+  height: 550px;
   padding-left: 40px;
   padding-right: 40px;
   }
@@ -1432,7 +1428,7 @@ ul {
     background: #e25504;
     padding: 13px 20px;
     border: 1px solid #e25504;
-    top: 0;
+    top: 1px;
   }
   .subscribe-form button i {
   color: #fff;
@@ -1902,31 +1898,34 @@ ul {
   .nav {
     /* height: 10%; */
     width: 100%;
-    height: 80px;
     background: white;
     position: -webkit-sticky;
-    position: sticky;
+    position: fixed;
     top: 0;
+    height: 80px;
     z-index: 100;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+    /* border-radius: 5px; */
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
   }
 
-  .nav img:first-of-type{
+  .nav img:first-of-type {
     left: 2%;
-    top: 30%;
+    top: 20%;
+    height: 50px;
+    width: 50px;
+    position: relative;
   }
 
-  .nav > .nav-header {
+  .nav>.nav-header {
     display: inline;
     position: relative;
-    top: 50%;
-    left: -10%;
+    top: 43%;
+    left: -50px;
   }
 
-  .nav > .nav-header > .nav-title {
+  .nav>.nav-header>.nav-title {
     display: inline-block;
-    font-size: 15px;
+    font-size: 18px;
     color: #0f1141;
     font-weight: 700;
     /* padding: 10px 10px 10px 10px; */
@@ -1934,64 +1933,75 @@ ul {
     width: 80%;
     position: relative;
     top: -40%;
+    text-align: left;
   }
 
-  .nav > .nav-btn {
+  .nav>.nav-btn {
     display: inline-block;
     position: absolute;
     right: 10px;
     top: 25px;
   }
-  .nav > .nav-btn > label {
+
+  .nav>.nav-btn>label {
     display: inline-block;
     width: 30px;
     height: 30px;
     padding: 8px;
   }
-  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+
+  .nav>.nav-btn>label:hover,
+  .nav #nav-check:checked~.nav-btn>label {
     background-color: rgba(0, 0, 0, 0.3);
   }
-  .nav > .nav-btn > label > span {
+
+  .nav>.nav-btn>label>span {
     display: block;
     width: 15px;
     height: 5px;
     border-top: 2px solid #eee;
   }
-  .nav > .nav-links {
-    position: absolute;
-    display: block;
-    width: 40%;
-    background-color: #333;
-    height: 0px;
-    transition: all 0.3s ease-in;
-    overflow-y: hidden;
-    top: 30px;
+
+  .nav>.nav-links {
     left: 20px;
   }
-  .nav > .nav-links > a {
+
+  .nav>.nav-links>a {
     display: block;
     width: 50%;
   }
-  .nav > #nav-check:not(:checked) ~ .nav-links {
+
+  .nav>#nav-check:not(:checked)~.nav-links {
     height: 0px;
   }
-  .nav > #nav-check:checked ~ .nav-links {
+
+  .nav>#nav-check:checked~.nav-links {
     height: calc(50vh - 25px);
     overflow-y: auto;
   }
 
   .hamb{
-    right: -30%;
+    right: 10px;
+    position: fixed;
+    top: 0px;
   }
 
   .side-menu:checked ~ .hamb + .nav-links{
-    width: 440px;
+    width: 90%;
+    top: 10px;
+    height: 720px;
+    left: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
   .side-menu:checked ~ .hamb + .nav-links > a > .dropdown-content{
     /* opacity: 1; */
     top: 75px;
     left: 150px;
+  }
+
+  .side-menu:checked ~ .hamb + .nav-links > a > .dropdown-content-industries{
+    overflow: auto;
   }
 
   .dropdown-content {
@@ -2032,43 +2042,67 @@ ul {
     margin: 5px;
   }
 
+  .row-footer{
+    display: block;
+    position: relative;
+    padding-top: 10px;
+    margin-left: 0;
+  }
+
+  .row-footer-new{
+    display: block;
+    position: relative;
+    left: -30px;
+  }
+
   .footer-section {
-    /* background: #0f1141;
-    position: relative; */
-    height: 195vh;
-    /* padding-left: 40px;
-    padding-right: 40px; */
-    }
+    height: 1300px;
+  }
 
   .footer-cta {
     border-bottom: 1px solid #373636;
-    padding-left: 90px;
-    padding-right: 180px;
+    padding-left: 0;
+    padding-right: 0;
   }
   .single-cta{
-    margin-left: 20px;
+    margin-left: 0;
+  }
+  .single-cta i{
+    top: 10px;
+    margin-left: 0;
+    width: 100%;
   }
   .single-cta-mail{
-    margin-left: 20px;
+    margin-left: 0;
   }
   .single-cta-mail i {
-    margin-top: 20px;
+    top: 10px;
+    margin-left: 0;
+    width: 100%;
   }
   .cta-text{
     /* margin-left: 20px; */
-    padding-left: 25px;
+    padding-left: 0;
     margin-bottom: 30px;
+    position: relative;
+    /* display: inline-block; */
+    top: 10px;
+    width: 100%;
   }
   .cta-text span{
     font-size: 10px;
     display:block;
-    width: 120px;
+    width: 100%;
   }
   .cta-text-email {
-    padding-left: 15px;
+    /* margin-left: 20px; */
+    padding-left: 0;
+    margin-bottom: 30px;
     position: relative;
-    top: -20px;
-    display: inline-block;
+    /* display: inline-block; */
+    top: 10px;
+    width: 100%;
+    text-align: center;
   }
   
   .cta-text-email h4 {
@@ -2086,12 +2120,21 @@ ul {
       font-size: 15px;
   }
 
+  .mailto{
+    width: 100%!Important;
+  }
+
+  /* .subscribe-form button{
+    top: -53px !important;
+    right: -220px !important;
+  } */
+
   .copyright-area{
     background: #202020;
     padding: 25px 0;
     width: 100%;
     position: relative;
-    top: 860px;
+    top: 780px;
     opacity: 100;
   }
   .copyright-text p {
@@ -2430,3 +2473,10 @@ ul {
 }
 
 /* RESPONSIVE CSS ENDS */
+
+.mailto{
+  display: block;
+  width: 100px;
+  height: 20px;
+  color: white;
+}

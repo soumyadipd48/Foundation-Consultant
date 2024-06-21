@@ -4,7 +4,7 @@
     /* text-align: center; */
     width: 100%;
     height: 500px;
-    right: -180px;
+    right: -100px;
     /* box-shadow: 0 8px 16px #dce1e1; */
 }
 
@@ -124,8 +124,17 @@
 @media (min-width:401px) and (max-width:500px) {
 
     .carousel-div{
-        width: auto;
-        right: 180px;
+        width: 90%;
+        right: 0;
+        height: 350px;
+    }
+
+    .carousel-div img.image-active{
+        display: block;
+        max-width: 100%;
+        width: 100%;
+        height: 300px;
+        /* margin-left: 1%; */
     }
 }
 
@@ -180,17 +189,61 @@
 @media (min-width:1301px) and ( max-width:1400px) {
 
     .carousel-div{
-        width: 50%;
-        right: -300px;
-        top: -325px;
-        height: 300px;
+        width: 100%;
+        height: 500px;
+        right: 0;
+        /* top: -325px;
+        height: 300px; */
     }
 
     .carousel-div img.image-active{
         display: block;
-        max-width: 600px;
-        height: 300px;
-        /* margin-left: 1%; */
+        max-width: 90%;
+        height: 500px;
+        top: 10px;
+        position: relative;
+    }
+}
+
+@media (min-width:1401px) and (max-width:1600px){
+
+    .carousel-div{
+        width: 100%;
+        /* left: 20%; */
+        height: 500px;
+        right: 0;
+        /* top: -325px;
+        height: 300px; */
+    }
+
+    .carousel-div img.image-active{
+        display: block;
+        max-width: 700px;
+        height: 500px;
+        width: 700px;
+        top: 10px;
+        position: relative;
+    }
+}
+
+@media (min-width:1601px) and (max-width:1700px){
+
+    .carousel-div{
+        width: 100%;
+        /* left: 20%; */
+        height: 550px;
+        right: -20px;
+        /* top: -325px;
+        height: 300px; */
+    }
+
+    .carousel-div img.image-active{
+        display: block;
+        max-width: 700px;
+        height: 550px;
+        width: 700px;
+        top: 10px;
+        position: relative;
     }
 }
 

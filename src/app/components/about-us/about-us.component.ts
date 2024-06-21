@@ -17,7 +17,8 @@ export class AboutUsComponent implements OnInit {
       name : 'Mr. Samatosh Sengupta',
       designation : 'Founder Partner',
       YOE : '45 years+',
-      degree : 'ME(Cal),MIRC,MIGS,MICI,MIBC'
+      degree : 'ME(Cal),MIRC,',
+      degree2 : 'MIGS,MICI,MIBC'
     },
     {
       id: 2,

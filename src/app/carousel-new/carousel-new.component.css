@@ -17,7 +17,7 @@
 .carousel-div img.image-active{
     display: block;
     max-width: 110%;
-    height: 810px;
+    height: 820px;
     /* margin-left: 1%; */
 }
 
@@ -135,7 +135,7 @@
 
     .carousel-div img.image-active{
         max-width: 110%;
-        height: 710px;
+        height: 660px;
     }
 }
 
@@ -172,7 +172,7 @@
 
     .carousel-div img.image-active{
         max-width: 110%;
-        height: 710px;
+        /* height: 710px; */
     }
 }
 

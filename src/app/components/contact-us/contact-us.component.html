@@ -59,7 +59,7 @@
 
     <div class="contact_us_6">
         <div class="responsive-container-block container">
-          <form class="form-box" data-aos="zoom-in">
+          <form class="form-box" data-aos="zoom-in" action="https://api.web3forms.com/submit" method="POST">
             <div class="container-block form-wrapper">
               <div class="mob-text">
                 <p class="text-blk contactus-head">
@@ -69,12 +69,13 @@
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis diam lectus sapien.
                 </p>
               </div>
+              <input type="hidden" name="access_key" value="0198704c-cd55-4639-8f4d-b5e8e3a98b1b">
               <div class="responsive-container-block" id="i2cbk">
                 <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i10mt-3">
                   <p class="text-blk input-title">
-                    FIRST NAME
+                    NAME
                   </p>
-                  <input class="input" id="ijowk-3" name="FirstName" placeholder="Please enter first name...">
+                  <input class="input" id="ijowk-3" name="Name" placeholder="Please enter first name...">
                 </div>
                 <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i10mt-3">
                   <p class="text-blk input-title">
@@ -98,7 +99,7 @@
                   <p class="text-blk input-title">
                     WHAT DO YOU HAVE IN MIND ?
                   </p>
-                  <textarea class="textinput" id="i5vyy-3" placeholder="Please enter query..."></textarea>
+                  <textarea class="textinput" id="i5vyy-3" name="Details" placeholder="Please enter query..."></textarea>
                 </div>
               </div>
               <button class="submit-btn" id="w-c-s-bgc_p-1-dm-id-2">
@@ -112,7 +113,7 @@
                 Visit us at
               </p>
               <p class="text-blk map-contactus-subhead">
-                91/33 Tollygunge Road. Kolkata - 700033
+                91/33 Tollygunge Road, Kolkata - 700033
               </p>
               <div class="social-media-links mob">
                 <a class="social-icon-link" href="#" id="ix94i-2-2">
@@ -138,7 +139,7 @@
     <!-- NEW FOOTER START -->
 
     <footer class="footer-section">
-        <div class="container_new" style="top: -30px; height: 50vh">
+        <div class="container_new" style="top: -30px; height: 425px">
             <div class="footer-cta pt-5 pb-5">
                 <div class="row">
                     <div class="col-xl-4 col-md-4 mb-30">
@@ -146,7 +147,7 @@
                             <i class="fas fa-map-marker-alt shake" (click)="openMap()"></i>
                             <div class="cta-text">
                                 <h4>Find us</h4>
-                                <span>91/33 Tollygunge Road. Kolkata - 700033</span>
+                                <span>91/33 Tollygunge Road, Kolkata - 700033</span>
                             </div>
                         </div>
                     </div>
@@ -164,8 +165,8 @@
                             <i class="far fa-envelope-open"></i>
                             <div class="cta-text-email">
                                 <h4>Mail us</h4>
-                                <h6>info@foundationconsultants.in</h6>
-                                <h6 style="margin-top: 5px; color: #e0dede;">geotechnic_soil@yahoo.com</h6>
+                                <h6><a class="mailto" href="mailto:soumyadipd588@gmail.com">info@foundationconsultants.in</a></h6>
+                                <h6 style="margin-top: 5px; color: #e0dede;"><a class="mailto" href="mailto:soumyadipd588@gmail.com">geotechnic_soil@yahoo.com</a></h6>
                             </div>
                         </div>
                     </div>
@@ -219,8 +220,9 @@
                                 <p>Don't miss to subscribe to our new feeds, kindly fill the form below.</p>
                             </div>
                             <div class="subscribe-form">
-                                <form action="#">
-                                    <input type="text" placeholder="Email Address">
+                                <form action="https://api.web3forms.com/submit" method="POST">
+                                    <input type="hidden" name="access_key" value="0198704c-cd55-4639-8f4d-b5e8e3a98b1b">
+                                    <input type="text"  name="Subscriber Email Address" placeholder="Email Address">
                                     <button><i class="fab fa-telegram-plane"></i></button>
                                 </form>
                             </div>
